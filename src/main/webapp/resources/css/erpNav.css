@@ -1,0 +1,94 @@
+﻿@charset "UTF-8";
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#topBar {
+  float: right;
+  width: 100%;
+  height: 100px;
+  border-bottom: 3px solid #769fcd;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+#topBar > h2 {
+  font-size: 2em;
+  margin: 2% 0 0 13%;
+  font-weight: 700;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12%;
+  height: 100%;
+  border-right: 3px solid #769fcd;
+  box-sizing: border-box;
+  z-index: 9999;
+  background-color: #fff;
+}
+#nav .nav_top {
+  width: 100%;
+  height: 100px;
+  border-bottom: 3px solid #769fcd;
+  box-sizing: border-box;
+}
+
+#nav .profile {
+  float: left;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #b9d7ea;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin: 7% 0 0 7%;
+}
+
+#nav > div span {
+  float: right;
+  margin: 13% 15% 0 0;
+  font-size: 30px;
+  color: #b9d7ea;
+}
+
+#nav .nav_bottom {
+  width: 100%;
+  height: 90%;
+}
+#nav .nav_list > li {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 2px solid #769fcd;
+  box-sizing: border-box;
+}
+
+#nav .nav_list > li > a {
+  color: #444;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+}
+#nav .nav_list > li:hover {
+  background-color: #b9d7ea;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px
+}
+
+#nav .nav_list > li:first-child {
+  background-color: #769fcd;
+  border: none;
+  cursor: auto;
+}
+#nav .nav_list > li:first-child > a {
+  color: #fff;
+  font-size: 1.7em;
+}
