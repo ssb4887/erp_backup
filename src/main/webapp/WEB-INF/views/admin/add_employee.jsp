@@ -27,6 +27,61 @@
 <!-- 주소찾기 -->
 <script src="${path}/resources/js/address.js" charset="UTF-8"></script>
 
+<script>
+$(document).ready(function(){
+	//---  주소 검색 모달에서 주소 입력 시
+		$('#getAddrBtn').click(function(){
+			var postCode = $('#entry_postcode5').val();
+			var doroAddr = $('#entry_address').val();
+			var jibunAddr = $('#entry_extra_info').val();
+			
+			$('#addr1').val(postCode);
+			$('#addr2').val(doroAddr + ' ' + jibunAddr);
+		});
+	});
+	
+	// --- 부서 검색 모달 안에 부서 검색 버튼을 눌렀을때
+	function search_dept() {
+		var dept = $('#selectDept').val();
+		// 영업부 선택시
+		if (dept == 1) {
+			$('#user_num').val('SAL');
+			$('#dept_name').val('영업부');
+			$('#dept_num').val(1);
+		}
+
+		// 인사부 선택시
+		else if (dept == 2) {
+			$('#user_num').val('HRD');
+			$('#dept_name').val('인사부');
+			$('#dept_num').val(2);
+		}
+
+		// 구매관리부 선택시
+		else if (dept == 3) {
+			$('#user_num').val('PUR');
+			$('#dept_name').val('구매관리부');
+			$('#dept_num').val(3);
+		}
+
+		// 배정부서 없음 선택시
+		else if (dept == 4) {
+			$('#user_num').val('DEF');
+			$('#dept_name').val('배정부서없음');
+			$('#dept_num').val(4);
+		}
+
+		// 아무것도 선택 안했을 시 
+		else {
+			alert('부서 선택을 해주세요!');
+		}
+
+}
+	
+</script>
+<script>
+
+</script>
 </head>
 <body>
 	<div id="wrap">
@@ -74,8 +129,8 @@
 							<!-- 사원번호 입력 -->
 							<div class="row">
 								<div class="form-group col-sm-9 col-md-9 col-lg-9">
-									<input type="text" name="user_num" class="form-control"
-										placeholder="사원번호" readonly>
+									<input type="text" name="user_num" id="user_num"
+										class="form-control" placeholder="사원번호" readonly>
 								</div>
 								<div class="form-group col-sm-3 col-md-3 col-lg-3">
 									<button type="button" class="btn btn-info btn-block"
@@ -105,7 +160,7 @@
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<input type="password" class="form-control" id="user_pw"
-										name="user_pw" placeholder="비밀번호" value="erp1234">
+										name="user_pw" placeholder="비밀번호" value="erp1234" readonly>
 								</div>
 							</div>
 
@@ -172,41 +227,125 @@
 		</div>
 	</div>
 
-<div id = "searchDeptModal" class = "modal fade" role = "dialog">
-		<div class = "modal-dialog">
-				<div class = "modal-content">
-						<div class = "modal-header">														 <!-- &times; : 부트스트랩 x 아이콘 만들기 -->
-								<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
-								<h4 class = "modal-title">이메일 인증</h4>
-						</div>
-						<div class = "modal-body">
-								<div class = "row">
-										<div class = "col-lg-8">
-												<input type = "email" class = "form-control" id = "user_mail_modal" placeholder = "이메일">
-										</div>
-								
-										<div class = "col-lg-4">
-												<button type = "button" class = "btn btn-success btn-block" id = "sendAuthBtn">인증번호 전송</button>
-										</div>
-								</div>
-								
-								<div class = "row" id = "authDiv" style = "margin-top : 15px; display : none;">
-										<div class = "col-lg-4">
-												<input type = "text" class = "form-control" id = "auth_num" placeholder = "인증번호">
-										</div>
-								
-										<div class = "col-lg-4">
-												<button type = "button" class = "btn btn-primary btn-block" id = "authMailBtn">인증</button>
-										</div>
-										
-										<div class = "col-lg-4">
-
-										</div>
-								</div>
-						</div>
+	<!-- 부서 번호 검색 모달  -->
+	<div id="searchDeptModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!-- &times; : 부트스트랩 x 아이콘 만들기 -->
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">부서 검색</h4>
 				</div>
+				<div class="modal-body">
+					<div class="row">
+						<form method="GET" action="">
+							<div class="form-group col-sm-6 col-md-6 col-lg-6">
+								<select class="form-control selectpicker noborder"
+									data-style="btn-info" name="selectDept" id="selectDept">
+									<optgroup label="부서선택">
+										<option value="1">영업부(SAL)</option>
+										<option value="2">인사부(HRD)</option>
+										<option value="3">구매관리부(PUR)</option>
+										<option value="4">배정부서없음(DEF)</option>
+									</optgroup>
+								</select>
+							</div>
+
+							<div class="form-group col-sm-6 col-md-6 col-lg-6">
+								<button type="button" class="btn btn-info btn-block"
+									onclick="search_dept()"
+									style="background-color: #B9D7EA; border: 1px solid #B9D7EA;"
+									data-toggle="modal" data-target="Modal">부서검색</button>
+							</div>
+						</form>
+
+						<!-- 사원번호  -->
+						<div class="form-group col-sm-12 col-md-12 col-lg-12">
+							<input type="text" class="form-control" id="user_num"
+								name="user_num" placeholder="사원번호" readonly>
+						</div>
+
+						<div class="form-group col-sm-12 col-md-12 col-lg-12">
+							<button type="button" class="btn btn-info btn-block"
+								data-dismiss="modal">완료</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-</div>
+	</div>
+	<!-- 부서 번호 검색 모달  종료 -->
+
+	<!-- 우편 번호 검색 모달 -->
+
+	<div id="addrModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class=modal-content>
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">주소 검색</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row" id="postcodify">
+						<script>
+							$('#postcodify')
+									.postcodify(
+											{
+												insertPostcode5 : '#entry_postcode5',
+												insertAddress : '#entry_address',
+												insertExtraInfo : '#entry_extra_info',
+												userFullJibeon : true,
+												mapLinkProvider : 'google',
+
+												ready : function() {
+													$(
+															'#postcodify div.postcode_search_status.empty')
+															.hide();
+												},
+
+												beforeSearch : function() {
+													$('#entry_box').hide();
+												},
+
+												afterSearch : function(
+														selectedEntry) {
+													$(
+															'#postcodify div.postcode_search_result')
+															.remove();
+													$(
+															'#postcodify div.postcode_search_status.summary')
+															.hide();
+													$('#entry_box').show();
+													$('#entry_details').focus();
+												}
+
+											});
+						</script>
+					</div>
+					<div>
+						<p>
+							<label for="entry_postcode5">우편번호</label> <input type="text"
+								class="form-control" id="entry_postcode5" readonly>
+						</p>
+						<p>
+							<label for="entry_address">도로명주소</label> <input type="text"
+								class="form-control" id="entry_address" readonly>
+						</p>
+						<p>
+							<label for="entry_extra_info">지명주소</label> <input type="text"
+								class="form-control" id="entry_extra_info" readonly>
+						</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="getAddrBtn" class="btn btn-primary"
+						data-dismiss="modal">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%-- 주소 검색 모달 종료--%>
+	<!-- 우편 번호 검색 모달 종료-->
 
 </body>
 </html>

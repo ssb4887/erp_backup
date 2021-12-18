@@ -12,4 +12,10 @@
 				AND user_pw 		= SHA2(#{user_pw}, 256)		
 		</select>
 		
+		<!-- 사원등록 -->
+		<insert id = "join">
+		 		INSERT INTO USERS
+		 		VALUES(#{user_num}, #{user_pw}, #{user_name}, #{dept_num}, #{user_tel}, #{user_email}, #{user_add} )
+		</insert>
+		
 </mapper>

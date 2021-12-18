@@ -119,6 +119,7 @@ public class MainController {
 			session.setAttribute("user", users);
 			url = "redirect:/search_clients";
 		}
+		
 		else {
 			ra.addFlashAttribute("msg", "로그인 정보가 일치하지 않습니다. ");
 			url = "redirect:/";
@@ -136,6 +137,5 @@ public class MainController {
 		
 		return "redirect:/";
 	}
-	
 
 }
