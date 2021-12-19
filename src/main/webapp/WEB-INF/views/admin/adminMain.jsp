@@ -36,22 +36,27 @@
 			<!-- nav 하단부분 -->
 			<div class="nav_bottom">
 				<ul class="nav_list">
-					<li>ERP_Project</li>
-					<li>부서등록</li>
-					<li>사원등록</li>
-					<li>부서권한관리</li>
-					<li>사원관리</li>
+					<li><a href="main">ERP_Project</a></li>
+					<li><a href="add_dept">부서등록</a></li>
+					<li><a href="add_employee">사원등록</a></li>
+					<li><a href="correct_auth">부서권한관리</a></li>
+					<li><a href="search_dept">사원관리</a></li>
 				</ul>
 			</div>
+		</div>
 
 
-			<!-- 상단 bar -->
-			<div id="topBar">
-				<!-- 상단 제목 -->
-				<h2>부서등록</h2>
+		<!-- 상단 bar -->
+		<div id="topBar">
+			<!-- 상단 제목 -->
+			<span style= "font-size: 2em; margin: 2% 0 0 13%; font-weight: 700; line-height: 100px;">관리자 페이지</span>
+			<div style="float: right; line-height: 100px;">
+				<a href="#">로그아웃</a>
 			</div>
 		</div>
-		<!-- nav 끝 -->
+
+	</div>
+	<!-- nav 끝 -->
 
 	</div>
 </body>

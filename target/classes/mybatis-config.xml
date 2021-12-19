@@ -6,5 +6,6 @@
 	<!-- 별명 적는 칸  -->
 	<typeAliases>
 		<typeAlias alias = "USERS" type = "com.erp.vo.Users" />
+		<typeAlias alias = "DEPARTMENT" type = "com.erp.vo.Department" />
 	</typeAliases>
 </configuration>

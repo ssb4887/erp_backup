@@ -17,6 +17,48 @@
     <!-- 제이쿼리  -->
     <script src="${path}/resources/js/jquery.js"></script>
 
+<script>
+$(document).ready(function(){
+
+	$('#searchNameBtn').click(function(){
+		var user_name = $('#user_name').val();
+		$.ajax({
+			
+			type : 'GET',
+			url    : './searchName',
+			data : {
+				// 문자열 : 변수값...
+				user_name : user_name
+			},
+			dataType : 'JSON',
+			success : function(data) {
+				//아이디에 해당하는 태그 자손들이 모두 삭제 
+					$('#usersListTable').empty(); 
+					var str = '';
+					str += '<table style="width: 100%; height: auto; text-align: center" class="table table-hover">';
+					for(var i = 0; i < data.length; i++) {
+						
+						str += '<tr>';
+							str += 	'<td style="width: 10%; text-align: center">'+ data[i].user_num +'</td>';
+							str += 	'<td style="width: 10%; text-align: center">********</td>';
+							str += 	'<td style="width: 10%; text-align: center">'+ data[i].user_name +'</td>';
+							str += 	'<td style="width: 10%; text-align: center">'+ data[i].dept_num +'</td>';
+							str += 	'<td style="width: 15%; text-align: center">'+ data[i].user_tel +'</td>';
+							str += 	'<td style="width: 15%; text-align: center">'+ data[i].user_email +'</td>';
+							str += 	'<td style="width: 30%; text-align: center">'+ data[i].user_add +'</td>';
+						str += '</tr>';
+					}
+					str += '</table>';
+					$('#usersListTable').append(str); 
+			}
+		});
+		
+	});
+	
+	
+});
+
+</script>
 </head>
 <body>
     <div id="wrap">
@@ -33,7 +75,7 @@
         <!-- nav 하단부분 -->
         <div class="nav_bottom">
           <ul class="nav_list">
-            <li><a href = "main">ERP_Project</a></li>
+            <li><a href = "adminMain">ERP_Project</a></li>
             <li><a href = "add_dept">부서등록</a></li>
             <li><a href = "add_employee">사원등록</a></li>
             <li><a href = "correct_auth">부서권한관리</a></li>
@@ -61,9 +103,10 @@
               <div class="form-group col-sm-6 col-md-6 col-lg-6">
                 <input
                   type="text"
-                  name="dept_name"
+                  name="user_name"
                   class="form-control"
                   placeholder="사원검색"
+                  id = "user_name"
                 />
               </div>
 
@@ -73,6 +116,8 @@
                   type="button"
                   class="btn btn-info btn-block"
                   style="background-color: #b9d7ea; border: 1px solid #b9d7ea"
+                  id = "searchNameBtn"
+                  
                 >
                   검색
                 </button>
@@ -136,454 +181,27 @@
             overflow: scroll;
           "
         >
-          <table
-            style="width: 100%; height: auto; text-align: center"
-            class="table table-hover"
-          >
-            <tr>
-              <td style="width: 10%; text-align: center">SAL001</td>
-              <td style="width: 10%; text-align: center">******</td>
-              <td style="width: 10%; text-align: center">홍길동</td>
-              <td style="width: 10%; text-align: center">SAL</td>
-              <td style="width: 15%; text-align: center">010-2222-2222</td>
-              <td style="width: 15%; text-align: center">songeond@email.com</td>
-              <td style="width: 30%; text-align: center">
-                부산시 사상구 괘법동
-              </td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-            <tr>
-              <td>SAL001</td>
-              <td>******</td>
-              <td>홍길동</td>
-              <td>SAL</td>
-              <td>010-2222-2222</td>
-              <td>songeond@email.com</td>
-              <td>부산시 사상구 괘법동</td>
-            </tr>
-          </table>
+        <div id = "usersListTable">
+	          <table
+	            style="width: 100%; height: auto; text-align: center"
+	            class="table table-hover"
+	          >
+	          <c:forEach var = "user" items = "${user_list}" >
+	            <tr>
+	              <td style="width: 10%; text-align: center">${user.user_num }</td>
+	              <td style="width: 10%; text-align: center">********</td>
+	              <td style="width: 10%; text-align: center">${user.user_name }</td>
+	              <td style="width: 10%; text-align: center">${user.dept_num }</td>
+	              <td style="width: 15%; text-align: center">${user.user_tel }</td>
+	              <td style="width: 15%; text-align: center">${user.user_email }</td>
+	              <td style="width: 30%; text-align: center">
+	                ${user.user_add }
+	              </td>
+	            </tr>
+	            </c:forEach>
+	            
+	          </table>
+          </div>
         </div>
       </div>
     </div>

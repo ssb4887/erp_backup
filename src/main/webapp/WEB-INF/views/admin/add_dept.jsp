@@ -40,7 +40,7 @@
         <!-- nav 하단부분 -->
         <div class="nav_bottom">
           <ul class="nav_list">
-            <li>ERP_Project</li>
+            <li><a href = "adminMain">ERP_Project</a></li>
             <li style="background-color: #b9d7ea">부서등록</li>
             <li><a href = "add_employee">사원등록</a></li>
             <li><a href = "correct_auth">부서권한관리</a></li>

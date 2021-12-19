@@ -38,45 +38,26 @@ $(document).ready(function(){
 			$('#addr1').val(postCode);
 			$('#addr2').val(doroAddr + ' ' + jibunAddr);
 		});
-	});
 	
-	// --- 부서 검색 모달 안에 부서 검색 버튼을 눌렀을때
-	function search_dept() {
-		var dept = $('#selectDept').val();
-		// 영업부 선택시
-		if (dept == 1) {
-			$('#user_num').val('SAL');
-			$('#dept_name').val('영업부');
-			$('#dept_num').val(1);
-		}
-
-		// 인사부 선택시
-		else if (dept == 2) {
-			$('#user_num').val('HRD');
-			$('#dept_name').val('인사부');
-			$('#dept_num').val(2);
-		}
-
-		// 구매관리부 선택시
-		else if (dept == 3) {
-			$('#user_num').val('PUR');
-			$('#dept_name').val('구매관리부');
-			$('#dept_num').val(3);
-		}
-
-		// 배정부서 없음 선택시
-		else if (dept == 4) {
-			$('#user_num').val('DEF');
-			$('#dept_name').val('배정부서없음');
-			$('#dept_num').val(4);
-		}
-
-		// 아무것도 선택 안했을 시 
-		else {
-			alert('부서 선택을 해주세요!');
-		}
-
-}
+	// 부서 검색시 ajax
+		$('#deptSelectBtn').click(function(){
+			var dept_num = $('#selectDept').val();
+			$.ajax({
+				type : 'POST',
+				url : './getUserNumCnt',
+				data : {
+					dept_num : dept_num
+				},
+				
+				dataType : 'JSON',
+				success : function(data) {
+						$('#user_num').val(data.user_num);	
+						$('#dept_num').val(data.dept_num);	
+						$('#dept_name').val(data.dept_name);	
+				}
+			})
+		});
+	});
 	
 </script>
 <script>
@@ -98,7 +79,7 @@ $(document).ready(function(){
 			<!-- nav 하단부분 -->
 			<div class="nav_bottom">
 				<ul class="nav_list">
-					<li><a href="main">ERP_Project</a></li>
+					<li><a href="adminMain">ERP_Project</a></li>
 					<li><a href="add_dept">부서등록</a></li>
 					<li style="background-color: #b9d7ea">사원등록</li>
 					<li><a href="correct_auth">부서권한관리</a></li>
@@ -238,37 +219,26 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<form method="GET" action="">
 							<div class="form-group col-sm-6 col-md-6 col-lg-6">
 								<select class="form-control selectpicker noborder"
 									data-style="btn-info" name="selectDept" id="selectDept">
 									<optgroup label="부서선택">
-										<option value="1">영업부(SAL)</option>
-										<option value="2">인사부(HRD)</option>
-										<option value="3">구매관리부(PUR)</option>
-										<option value="4">배정부서없음(DEF)</option>
+									
+									<c:forEach var = 'dept'  items = "${dept_list}">
+										<option value="${dept.dept_num }">${dept.dept_name}</option>
+									</c:forEach>
+									
 									</optgroup>
 								</select>
 							</div>
 
 							<div class="form-group col-sm-6 col-md-6 col-lg-6">
-								<button type="button" class="btn btn-info btn-block"
-									onclick="search_dept()"
+								<button type="button" class="btn btn-info btn-block" id = "deptSelectBtn"
 									style="background-color: #B9D7EA; border: 1px solid #B9D7EA;"
-									data-toggle="modal" data-target="Modal">부서검색</button>
+									data-toggle="modal" data-target="Modal">부서선택</button>
 							</div>
-						</form>
+					
 
-						<!-- 사원번호  -->
-						<div class="form-group col-sm-12 col-md-12 col-lg-12">
-							<input type="text" class="form-control" id="user_num"
-								name="user_num" placeholder="사원번호" readonly>
-						</div>
-
-						<div class="form-group col-sm-12 col-md-12 col-lg-12">
-							<button type="button" class="btn btn-info btn-block"
-								data-dismiss="modal">완료</button>
-						</div>
 					</div>
 				</div>
 			</div>

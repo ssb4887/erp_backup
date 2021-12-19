@@ -61,7 +61,7 @@
         <!-- nav 하단부분 -->
         <div class="nav_bottom">
           <ul class="nav_list">
-            <li><a href = "main">ERP_Project</a></li>
+            <li><a href = "adminMain">ERP_Project</a></li>
             <li><a href = "add_dept">부서등록</a></li>
             <li><a href = "add_employee">사원등록</a></li>
             <li style="background-color: #b9d7ea">부서권한관리</li>
@@ -87,13 +87,7 @@
             <label for="tab4">부서미정</label> -->
 
             <section id="con1">
-              <table
-                width="300"
-                height="400"
-                cellpadding="0"
-                cellspacing="0"
-                border="1"
-              >
+              <table width="300" height="400" cellpadding="0" cellspacing="0"  border="1"  >
                 <tr class="table_head">
                   <td>테이블 명</td>
                   <td>수정</td>

@@ -1,5 +1,6 @@
 package com.erp.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.erp.service.ErpService;
@@ -21,7 +23,7 @@ import com.erp.vo.Users;
 public class MainController {
 	
 	@Inject
-	ErpService erpService;
+	ErpService service;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
@@ -37,27 +39,6 @@ public class MainController {
 		return "main";
 	}
 	// 페이지 이동관리(테스트)
-	// -- admin page
-	// add_dept(부서추가)
-	@RequestMapping(value ="/add_dept", method = RequestMethod.GET)
-	public String add_dept(Model model) {
-		return "admin/add_dept";
-	}
-	// add_employee(사원등록)
-	@RequestMapping(value ="/add_employee", method = RequestMethod.GET)
-	public String add_employee(Model model) {
-		return "admin/add_employee";
-	}
-	// correct_auth(권한부여)
-	@RequestMapping(value ="/correct_auth", method = RequestMethod.GET)
-	public String correct_auth(Model model) {
-		return "admin/correct_auth";
-	}
-	// search_dept(사원검색)
-	@RequestMapping(value ="/search_dept", method = RequestMethod.GET)
-	public String search_dept(Model model) {
-		return "admin/search_dept";
-	}
 	
 	// -- user page
 	// search_clients(고객관리)
@@ -97,7 +78,7 @@ public class MainController {
 		
 		
 		
-		Users result = erpService.loginAction(users);
+		Users result = service.loginAction(users);
 		String url = null;
 		
 		if(result == null) {
@@ -138,4 +119,22 @@ public class MainController {
 		return "redirect:/";
 	}
 
+	@RequestMapping(value = "/searchName", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Users> searchName(String user_name) throws Exception {
+		
+		return service.searchName(user_name);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

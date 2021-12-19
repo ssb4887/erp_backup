@@ -13,9 +13,10 @@
   border-bottom: 3px solid #769fcd;
   box-sizing: border-box;
   background-color: #fff;
+  line-height: 100px;
 }
 
-#topBar > h2 {
+#topBar > span {
   font-size: 2em;
   margin: 2% 0 0 13%;
   font-weight: 700;

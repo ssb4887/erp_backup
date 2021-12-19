@@ -12,10 +12,48 @@
 				AND user_pw 		= SHA2(#{user_pw}, 256)		
 		</select>
 		
+		
+		<!-- 부서 검색 -->
+		<select id = "getDeptList" resultType = "Department">
+				SELECT *
+				FROM DEPARTMENT
+		</select>
+		
+		
+		<!-- users 테이블을 기준으로 각 부서에 몇명이 있는지 카운트 후 + 1	 -->
+		<select id = "getDeptUserCnt" resultType = "_int">
+				SELECT 	count(*) + 1
+				FROM    	USERS
+				WHERE 	dept_num = #{dept_num}
+		</select>
+		
+		
+		<select id = "getDepartment" resultType = "Department">
+				SELECT 	*
+				FROM 		DEPARTMENT
+				WHERE 	dept_num = #{dept_num}
+		</select>
+		
+		
 		<!-- 사원등록 -->
 		<insert id = "join">
 		 		INSERT INTO USERS
 		 		VALUES(#{user_num}, #{user_pw}, #{user_name}, #{dept_num}, #{user_tel}, #{user_email}, #{user_add} )
 		</insert>
+		
+		<!--  사원 리스트 불러오기 -->
+		<select id = "getUsersList" resultType = "Users">
+				SELECT *
+				FROM USERS
+				WHERE user_num NOT LIKE 'admin'
+		</select>
+		
+		<!-- 유저 이름 검색 -->
+		<select id = "searchName" resultType = "Users">
+				SELECT *
+				FROM USERS
+				WHERE user_name LIKE #{user_name}
+				AND user_num NOT LIKE 'admin'
+		</select>
 		
 </mapper>
