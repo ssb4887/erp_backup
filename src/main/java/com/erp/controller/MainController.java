@@ -90,15 +90,15 @@ public class MainController {
 		
 		else if(result.getUser_num().equals("admin")) {
 			session.setAttribute("user", users);
-			url = "redirect:/add_dept";
+			url = "redirect:/admin/add_dept";
 		}
 		
-		else if(result.getUser_num().substring(0, 2) == "SAL"	||
-					result.getUser_num().substring(0, 2) == "HRD"||
-					result.getUser_num().substring(0, 2) == "PUR"||
-					result.getUser_num().substring(0, 2) == "DEF"	){
+		else if((result.getUser_num().substring(0, 2) == "SAL")	||
+					(result.getUser_num().substring(0, 2) == "HRD") ||
+					(result.getUser_num().substring(0, 2) == "PUR") ||
+					(result.getUser_num().substring(0, 2) == "DEF")	){
 			session.setAttribute("user", users);
-			url = "redirect:/search_clients";
+			url = "redirect:/user/search_clients";
 		}
 		
 		else {

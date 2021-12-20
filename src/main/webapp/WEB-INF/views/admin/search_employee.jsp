@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 	$('#searchNameBtn').click(function(){
 		var user_name = $('#user_name').val();
-		$.ajax({
+		$.ajax({ // ajax 는 데이터를 받아오는거 url받아오는거 아님 
 			
 			type : 'GET',
 			url    : './searchName',
@@ -32,10 +32,10 @@ $(document).ready(function(){
 			},
 			dataType : 'JSON',
 			success : function(data) {
-				//아이디에 해당하는 태그 자손들이 모두 삭제 
+					//아이디에 해당하는 태그 자손들이 모두 삭제 
 					$('#usersListTable').empty(); 
 					var str = '';
-					str += '<table style="width: 100%; height: auto; text-align: center" class="table table-hover">';
+					str += '<table style="width: 100%; height: auto; text-align: center" class="table table-hover">';	
 					for(var i = 0; i < data.length; i++) {
 						
 						str += '<tr>';
@@ -47,10 +47,12 @@ $(document).ready(function(){
 							str += 	'<td style="width: 15%; text-align: center">'+ data[i].user_email +'</td>';
 							str += 	'<td style="width: 30%; text-align: center">'+ data[i].user_add +'</td>';
 						str += '</tr>';
+						
 					}
 					str += '</table>';
 					$('#usersListTable').append(str); 
 			}
+		
 		});
 		
 	});
@@ -125,6 +127,7 @@ $(document).ready(function(){
 
               <!-- 사원등록 -->
               <div class="form-group col-sm-3 col-md-3 col-lg-3">
+              <a href ="add_employee">
                 <button
                   type="button"
                   class="btn btn-info btn-block"
@@ -132,6 +135,7 @@ $(document).ready(function(){
                 >
                   사원등록
                 </button>
+                </a>
               </div>
             </div>
           </form>
@@ -182,11 +186,8 @@ $(document).ready(function(){
           "
         >
         <div id = "usersListTable">
-	          <table
-	            style="width: 100%; height: auto; text-align: center"
-	            class="table table-hover"
-	          >
-	          <c:forEach var = "user" items = "${user_list}" >
+	          <table style="width: 100%; height: auto; text-align: center"  class="table table-hover" >
+	          <c:forEach var = "user" items = "${user_list}" > <!--  controller에서 받아옴 -->
 	            <tr>
 	              <td style="width: 10%; text-align: center">${user.user_num }</td>
 	              <td style="width: 10%; text-align: center">********</td>
@@ -194,9 +195,7 @@ $(document).ready(function(){
 	              <td style="width: 10%; text-align: center">${user.dept_num }</td>
 	              <td style="width: 15%; text-align: center">${user.user_tel }</td>
 	              <td style="width: 15%; text-align: center">${user.user_email }</td>
-	              <td style="width: 30%; text-align: center">
-	                ${user.user_add }
-	              </td>
+	              <td style="width: 30%; text-align: center">${user.user_add }</td>
 	            </tr>
 	            </c:forEach>
 	            

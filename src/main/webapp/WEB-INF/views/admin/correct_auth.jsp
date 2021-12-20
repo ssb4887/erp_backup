@@ -65,7 +65,7 @@
             <li><a href = "add_dept">부서등록</a></li>
             <li><a href = "add_employee">사원등록</a></li>
             <li style="background-color: #b9d7ea">부서권한관리</li>
-            <li><a href = "search_dept">사원관리</a></li>
+            <li><a href = "search_employee">사원관리</a></li>
           </ul>
         </div>
       </div>

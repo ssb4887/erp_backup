@@ -1,7 +1,7 @@
 package com.erp.vo;
 
 public class Auth_table {
-	private int dept_num;
+	private String dept_num;
 	private int auth_sales;
 	private int auth_salesList;
 	private int auth_clients;
@@ -12,7 +12,7 @@ public class Auth_table {
 	
 	public Auth_table() {}
 
-	public Auth_table(int dept_num, int auth_sales, int auth_salesList, int auth_clients, int auth_orders,
+	public Auth_table(String dept_num, int auth_sales, int auth_salesList, int auth_clients, int auth_orders,
 			int auth_supplier, int auth_product, int auth_accounting) {
 		this.dept_num = dept_num;
 		this.auth_sales = auth_sales;
@@ -24,11 +24,11 @@ public class Auth_table {
 		this.auth_accounting = auth_accounting;
 	}
 
-	public int getDept_num() {
+	public String getDept_num() {
 		return dept_num;
 	}
 
-	public void setDept_num(int dept_num) {
+	public void setDept_num(String dept_num) {
 		this.dept_num = dept_num;
 	}
 

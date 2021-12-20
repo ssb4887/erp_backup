@@ -7,7 +7,7 @@ public class Supplier {
 	private String user_num;
 	private String user_tel;
 	private String supp_type;
-	private String sup_note;
+	private String supp_note;
 	
 	public Supplier() {}
 
@@ -19,7 +19,7 @@ public class Supplier {
 		this.user_num = user_num;
 		this.user_tel = user_tel;
 		this.supp_type = supp_type;
-		this.sup_note = sup_note;
+		this.supp_note = sup_note;
 	}
 
 	public String getSupp_id() {
@@ -71,11 +71,11 @@ public class Supplier {
 	}
 
 	public String getSup_note() {
-		return sup_note;
+		return supp_note;
 	}
 
 	public void setSup_note(String sup_note) {
-		this.sup_note = sup_note;
+		this.supp_note = sup_note;
 	}
 	
 }

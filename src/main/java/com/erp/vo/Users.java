@@ -4,14 +4,14 @@ public class Users {
 	private String 	user_num;
 	private String 	user_pw;
 	private String 	user_name;
-	private int			dept_num;
+	private String	dept_num;
 	private String 	user_tel;
 	private String 	user_email; 	
 	private String 	user_add;
 
 	public Users() {}
 
-	public Users(String user_num, String user_pw, String user_name, int dept_num, String user_tel, String user_email,
+	public Users(String user_num, String user_pw, String user_name, String dept_num, String user_tel, String user_email,
 			String user_add) {
 		this.user_num = user_num;
 		this.user_pw = user_pw;
@@ -46,11 +46,11 @@ public class Users {
 		this.user_name = user_name;
 	}
 
-	public int getDept_num() {
+	public String getDept_num() {
 		return dept_num;
 	}
 
-	public void setDept_num(int dept_num) {
+	public void setDept_num(String dept_num) {
 		this.dept_num = dept_num;
 	}
 
