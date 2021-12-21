@@ -36,11 +36,11 @@
 			<!-- nav 하단부분 -->
 			<div class="nav_bottom">
 				<ul class="nav_list">
-					<li><a href="main">ERP_Project</a></li>
-					<li><a href="add_dept">부서등록</a></li>
-					<li><a href="add_employee">사원등록</a></li>
-					<li><a href="correct_auth">부서권한관리</a></li>
+					<li><a href="adminMain">ERP_Project</a></li>
 					<li><a href="search_employee">사원관리</a></li>
+					<li><a href="add_employee">사원등록</a></li>
+					<li><a href="search_dept">부서관리</a></li>
+					<li><a href="correct_auth">부서권한관리</a></li>
 				</ul>
 			</div>
 		</div>

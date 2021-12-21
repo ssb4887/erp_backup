@@ -24,4 +24,8 @@ public interface ErpDAO {
 	
 	// 유저 이름으로 데이터 검색
 	public List<Users> searchName(String user_name) throws Exception;
+	
+	// 사원 등록
+	public void join(Users users) throws Exception;
+	
 }

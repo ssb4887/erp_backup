@@ -80,10 +80,11 @@ $(document).ready(function(){
 			<div class="nav_bottom">
 				<ul class="nav_list">
 					<li><a href="adminMain">ERP_Project</a></li>
-					<li><a href="add_dept">부서등록</a></li>
-					<li style="background-color: #b9d7ea">사원등록</li>
-					<li><a href="correct_auth">부서권한관리</a></li>
 					<li><a href="search_employee">사원관리</a></li>
+					<li style="background-color: #b9d7ea; font-weight: bold; color: #fff; font-size: 20px">사원등록</li>
+					<li><a href="search_dept">부서관리</a></li>
+					<li><a href="correct_auth">부서권한관리</a></li>
+					
 				</ul>
 			</div>
 
@@ -104,14 +105,14 @@ $(document).ready(function(){
 				<div class="col-lg-3"></div>
 				<div class="col-lg-6">
 					<div class="jumbotron" style="background-color: #F7FBFC">
-						<form method="POST" action="./dept_join">
+						<form method="POST" action="./joinAction">
 							<h3 style="text-align: center; margin: -5% 0 10% 0;">사원등록</h3>
 
 							<!-- 사원번호 입력 -->
 							<div class="row">
 								<div class="form-group col-sm-9 col-md-9 col-lg-9">
 									<input type="text" name="user_num" id="user_num"
-										class="form-control" placeholder="사원번호" readonly>
+										class="form-control" placeholder="사원번호">
 								</div>
 								<div class="form-group col-sm-3 col-md-3 col-lg-3">
 									<button type="button" class="btn btn-info btn-block"
@@ -125,7 +126,7 @@ $(document).ready(function(){
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<input type="text" class="form-control" id="dept_num"
-										name="dept_num" placeholder="부서코드" readonly>
+										name="dept_num" placeholder="부서코드">
 								</div>
 							</div>
 
@@ -133,7 +134,7 @@ $(document).ready(function(){
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<input type="text" class="form-control" id="dept_name"
-										name="dept_name" placeholder="부서명" readonly>
+										name="dept_name" placeholder="부서명">
 								</div>
 							</div>
 
@@ -173,33 +174,28 @@ $(document).ready(function(){
 							<div class="row">
 								<!-- 우편번호 -->
 								<div class="form-group col-sm-6 col-md-6 col-lg-6">
-									<input type="text" class="form-control" id="addr1" name="addr1"
-										placeholder="우편번호" readonly>
+									<input type="text" class="form-control" id="addr1" name="addr1" placeholder="우편번호" readonly>
 								</div>
 
 								<div class="form-group col-sm-6 col-md-6 col-lg-6">
-									<button type="button" class="btn btn-info btn-block"
-										style="background-color: #B9D7EA; border: 1px solid #B9D7EA;"
+									<button type="button" class="btn btn-info btn-block" style="background-color: #B9D7EA; border: 1px solid #B9D7EA;"
 										data-toggle="modal" data-target="#addrModal">주소검색</button>
 								</div>
 
 								<!-- 주소 -->
 								<div class="form-group cols-sm12 col-md-12 col-lg-12">
-									<input type="text" class="form-control" id="addr2" name="addr2"
-										placeholder="주소" readonly>
+									<input type="text" class="form-control" id="addr2" name="addr2" placeholder="주소" readonly>
 								</div>
 
 								<!-- 상세 주소 -->
 								<div class="form-group cols-sm12 col-md-12 col-lg-12">
-									<input type="text" class="form-control" id="addr3" name="addr3"
-										placeholder="상세 주소">
+									<input type="text" class="form-control" id="addr3" name="addr3" placeholder="상세 주소">
 								</div>
 							</div>
 
 							<!-- 제출 버튼 -->
 							<div class="form-group">
-								<input type="submit" class="btn btn-info form-control"
-									value="사원등록">
+								<input type="submit" class="btn btn-info form-control" value="사원등록">
 							</div>
 						</form>
 					</div>

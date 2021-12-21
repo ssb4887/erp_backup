@@ -15,4 +15,6 @@ public interface ErpService {
 	public List<Users> getUsersList() throws Exception;
 	
 	public List<Users> searchName(String user_name) throws Exception;
+	
+	public void joinAction(Users users) throws Exception;
 }

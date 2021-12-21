@@ -54,4 +54,9 @@ public class ErpDAOImpl implements ErpDAO {
 		return sqlSession.selectList(SESSION + ".searchName", user_name); //mapper 에 #{} 에 요구하는 것에 넘겨주는 부분 
 	}
 
+	@Override
+	public void join(Users users) throws Exception {
+		sqlSession.insert(SESSION + ".join", users);
+	}
+
 }

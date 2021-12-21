@@ -36,7 +36,7 @@ public class MainController {
 	// main
 	@RequestMapping(value ="/main", method = RequestMethod.GET)
 	public String main(Model model) {
-		return "main";
+		return "userMain";
 	}
 	// 페이지 이동관리(테스트)
 	
@@ -68,9 +68,6 @@ public class MainController {
 	}
 	
 	
-	
-	
-	
 	// -- 액션시 기능들
 	// url -- loginAction일 경우
 	@RequestMapping(value = "/loginAction", method = RequestMethod.POST)
@@ -81,6 +78,7 @@ public class MainController {
 		Users result = service.loginAction(users);
 		String url = null;
 		
+		// user 값이 null 이면 로그인 안됌
 		if(result == null) {
 
 			ra.addFlashAttribute("msg", "로그인 정보가 일치하지 않습니다. ");
@@ -88,19 +86,24 @@ public class MainController {
 			
 		}
 		
+		// user user_num이 admin(관리자계정)	 이면 관리자 페이지로 로그인 후 이동
 		else if(result.getUser_num().equals("admin")) {
 			session.setAttribute("user", users);
-			url = "redirect:/admin/add_dept";
+			url = "redirect:/admin/search_dept";
 		}
 		
-		else if((result.getUser_num().substring(0, 2) == "SAL")	||
-					(result.getUser_num().substring(0, 2) == "HRD") ||
-					(result.getUser_num().substring(0, 2) == "PUR") ||
-					(result.getUser_num().substring(0, 2) == "DEF")	){
+		// user 의 dept_num에 부서코드가 있으면 로그인 후 유저 페이지르 이동
+		else if(
+				result.getDept_num().equals("SAL") 	||
+				result.getDept_num().equals("HRD") 	||
+				result.getDept_num().equals("PUR")	||
+				result.getDept_num().equals("DEF")
+				) {
 			session.setAttribute("user", users);
-			url = "redirect:/user/search_clients";
+			url = "redirect:/search_clients";
 		}
 		
+		// 그 외 로그인 알림 창 후 다시 로그인 창으로 이동
 		else {
 			ra.addFlashAttribute("msg", "로그인 정보가 일치하지 않습니다. ");
 			url = "redirect:/";
@@ -110,7 +113,7 @@ public class MainController {
 	}
 	
 	// url -- logout일 경우
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws Exception {
 		
 		// 세션 지우기
@@ -119,6 +122,7 @@ public class MainController {
 		return "redirect:/";
 	}
 
+	
 	@RequestMapping(value = "/searchName", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Users> searchName(String user_name) throws Exception {

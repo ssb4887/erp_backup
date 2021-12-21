@@ -13,6 +13,7 @@ import com.erp.vo.Users;
 public class ErpServiceImpl implements ErpService {
 	@Inject
 	ErpDAO dao;
+	
 
 	@Override
 	public Users loginAction(Users users) throws Exception {
@@ -53,7 +54,10 @@ public class ErpServiceImpl implements ErpService {
 		
 		return dao.searchName(user_name);
 	}
-	
-	
 
+	@Override
+	public void joinAction(Users users) throws Exception {
+		dao.join(users);
+	}
+	
 }

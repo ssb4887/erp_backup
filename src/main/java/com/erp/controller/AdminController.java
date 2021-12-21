@@ -1,6 +1,6 @@
 package com.erp.controller;
 
-import java.util.HashMap; 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +24,12 @@ public class AdminController {
 	@Inject
 	ErpService service;
 	
+//	List<Department> dept_list = null;
+//	public AdminController() throws Exception {
+//		dept_list = service.getDeptList();
+//	}
+	
+	
 	// -- admin page
 	// adminMain(관리자 메인)
 	@RequestMapping(value ="/adminMain", method = RequestMethod.GET)
@@ -31,12 +37,26 @@ public class AdminController {
 		return "admin/adminMain";
 	}
 	
-	// add_dept(부서추가)
+	
+	// add_employee(사원추가)
 	@RequestMapping(value ="/add_employee", method = RequestMethod.GET)
-	public String add_employee(Model model) {
+	public String add_employee(Model model) throws Exception {
+		
+		List<Department> dept_list = service.getDeptList();
+		model.addAttribute("dept_list", dept_list);
+		
 		return "admin/add_employee";
 	}
 
+	// search_dept(부서검색)
+	@RequestMapping(value ="/search_dept", method = RequestMethod.GET)
+	public String search_dept(Model model) throws Exception {
+		
+		List<Department> dept_list = service.getDeptList();
+		model.addAttribute("dept_list", dept_list);
+		
+		return "admin/search_dept";
+	}
 	
 	// correct_auth(권한부여)
 	@RequestMapping(value ="/correct_auth", method = RequestMethod.GET)
@@ -82,6 +102,18 @@ public class AdminController {
 		List<Users> list = service.searchName(user_name);
 		
 		return list;
+	}
+	
+
+	// url -- joinAction 일 경우
+	@RequestMapping(value = "/joinAction", method = RequestMethod.POST)
+	public String joinAction(Users users, String addr1, String addr2, String addr3) throws Exception {
+		
+		users.setUser_add(addr1 + " " + addr2 + " " + addr3);
+		
+		service.joinAction(users);
+		
+		return "redirect:/admin/add_employee";
 	}
 	
 }

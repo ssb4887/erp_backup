@@ -38,7 +38,7 @@
 		<!-- 사원등록 -->
 		<insert id = "join">
 		 		INSERT INTO USERS
-		 		VALUES(#{user_num}, #{user_pw}, #{user_name}, #{dept_num}, #{user_tel}, #{user_email}, #{user_add} )
+		 		VALUES(#{user_num}, SHA2(#{user_pw},256), #{user_name}, #{dept_num}, #{user_tel}, #{user_email}, #{user_add} )
 		</insert>
 		
 		<!--  사원 리스트 불러오기 -->
@@ -55,5 +55,6 @@
 				WHERE user_name LIKE #{user_name}
 				AND user_num NOT LIKE 'admin'
 		</select>
+		
 		
 </mapper>
