@@ -1,5 +1,5 @@
 package com.erp.dao;
-
+//admin 관리자
 import java.util.List;
 
 import javax.inject.Inject;
@@ -11,7 +11,7 @@ import com.erp.vo.Department;
 import com.erp.vo.Users;
 
 @Repository
-public class ErpDAOImpl implements ErpDAO {
+public class AdminDAOImpl implements AdminDAO {
 
 	@Inject
 	SqlSession sqlSession;
@@ -58,5 +58,12 @@ public class ErpDAOImpl implements ErpDAO {
 	public void join(Users users) throws Exception {
 		sqlSession.insert(SESSION + ".join", users);
 	}
+
+	@Override
+	public void updateDept(Department department) throws Exception {
+		sqlSession.update(SESSION + ".updateDept", department);
+	}
+	
+	
 
 }

@@ -57,4 +57,11 @@
 		</select>
 		
 		
+		<!-- 부서 수정 기능 -->
+		<update id = "updateDept">
+				UPDATE DEPARTMENT 
+				SET dept_name = #{dept_name}, dept_tel = #{dept_tel}
+				WHERE dept_num = #{dept_num}
+				
+		</update>
 </mapper>

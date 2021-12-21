@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.erp.service.ErpService;
+import com.erp.service.AdminService;
 import com.erp.vo.Users;
 
 // 연결해주는 메인 컨트롤러
@@ -23,7 +23,7 @@ import com.erp.vo.Users;
 public class MainController {
 	
 	@Inject
-	ErpService service;
+	AdminService service;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	

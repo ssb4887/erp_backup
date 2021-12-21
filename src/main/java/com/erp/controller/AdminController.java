@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.erp.service.ErpService;
+import com.erp.service.AdminService;
 import com.erp.vo.Department;
 import com.erp.vo.Users;
 
@@ -22,7 +22,7 @@ import com.erp.vo.Users;
 public class AdminController {
 	
 	@Inject
-	ErpService service;
+	AdminService service;
 	
 //	List<Department> dept_list = null;
 //	public AdminController() throws Exception {
@@ -116,4 +116,9 @@ public class AdminController {
 		return "redirect:/admin/add_employee";
 	}
 	
+	@RequestMapping(value = "/updateDetpAction", method = RequestMethod.POST)
+	public String updateDetpAction(Department department) throws Exception {
+		
+		return null;
+	}
 }

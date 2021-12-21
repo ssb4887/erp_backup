@@ -1,11 +1,11 @@
 package com.erp.dao;
-
+// admin 관리자
 import java.util.List;
 
 import com.erp.vo.Department;
 import com.erp.vo.Users;
 // dao 	는 mapper 아이디와 동일하게 지어주는 것이 좋다 
-public interface ErpDAO {
+public interface AdminDAO {
 	// 로그인 기능
 	public Users login(Users users) throws Exception;
 	
@@ -27,5 +27,8 @@ public interface ErpDAO {
 	
 	// 사원 등록
 	public void join(Users users) throws Exception;
+	
+	// 부서 수정
+	public void updateDept(Department department) throws Exception;
 	
 }
