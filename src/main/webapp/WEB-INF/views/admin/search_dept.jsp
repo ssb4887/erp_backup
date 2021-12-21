@@ -29,47 +29,11 @@ $(document).ready(function() {
 		$('#dept_update').hide();
 		$('#updateBtn').hide();
 		
-		$('#addBtn').click(function(){
-			$('#dept_update').show();
-			$('#dept_add').hide();
-			$('#addBtn').hide();
-			$('#updateBtn').show();
-			
-		});
-		$('#updateBtn').click(function(){
-			$('#dept_update').hide();
-			$('#dept_add').show();
-			$('#addBtn').show();
-			$('#updateBtn').hide();
-		});
-	
-		// 수정 버튼을 눌렀을때
-		function btn_DEF() {
-			consloe.log('test');
-		/* 	$('#dept_num').val('DEF')
-			$('#dept_name').val('배정부서없음')
-			$('#dept_tel').val('051-444-4444') */
-		}
 		
-		function btn_PUR() {
-			$('#dept_num').val()
-			$('#dept_name').val()
-			$('#dept_tel').val()
-		}
+
 		
-		function btn_SAL() {
-			$('#dept_num').val()
-			$('#dept_name').val()
-			$('#dept_tel').val()
-		}
-		
-		function btn_HRD() {
-			$('#dept_num').val()
-			$('#dept_name').val()
-			$('#dept_tel').val()
-		}
-		
-		
+
+				
 		// ajax 로 리스트 받아오기
 		$('#searchNameBtn').click(function() {
 										var user_name = $('#dept_name').val();
@@ -113,6 +77,55 @@ $(document).ready(function() {
 
 		
 });
+function addBtn(){
+	$('#addBtn').click(function(){
+		$('#dept_update').show();
+		$('#dept_add').hide();
+		$('#addBtn').hide();
+		$('#updateBtn').show();
+		
+	});
+}
+
+function updateBtn(){
+	$('#updateBtn').click(function(){
+		$('#dept_update').hide();
+		$('#dept_add').show();
+		$('#addBtn').show();
+		$('#updateBtn').hide();
+	});
+}
+
+//수정 버튼을 눌렀을때
+function btn_DEF() {
+  	$('#dept_num').val('DEF');
+	$('#dept_name').val('배정부서없음');
+	$('#dept_tel').val('051-444-4444');
+	updateBtn();
+}
+
+function btn_PUR() {
+	$('#dept_num').val('PUR');
+	$('#dept_name').val('구매관리부');
+	$('#dept_tel').val('051-333-3333');
+	updateBtn();
+}
+
+function btn_SAL() {
+	$('#dept_num').val('SAL');
+	$('#dept_name').val('영업부');
+	$('#dept_tel').val('051-111-1111');
+	updateBtn();
+}
+
+function btn_HRD() {
+	$('#dept_num').val('HRD');
+	$('#dept_name').val('인사부');
+	$('#dept_tel').val('051-222-2222');
+	updateBtn();
+}
+
+
 </script>
 
 </head>
@@ -162,8 +175,8 @@ $(document).ready(function() {
 						<!-- 검색어 입력 -->
 						<div class="row">
 							<div class="form-group col-sm-6 col-md-6 col-lg-6">
-								<input type="text" name="dept_name" class="form-control"
-									placeholder="부서검색" id="dept_name" />
+								<input type="text" name="search_dept_name" class="form-control"
+									placeholder="부서검색" id="search_dept_name" />
 							</div>
 
 							<!-- 검색버튼 -->
@@ -198,12 +211,12 @@ $(document).ready(function() {
 			<!-- 두 번째 row칸 시작 -->
 			<div class="row">
 				<!-- 테이블 항목 -->
-
+			<form method = "POST" action = "./updateDeptAction">
 				<div class="form-group col-sm-6 col-md-6 col-lg-6"
 					class="table-responsive"
 					style="width: 570px; height: auto; margin-left: 1%;">
 					<div class="jumbotron" style="background-color: #f7fbfc; border-top: 1px solid #000; border-bottom: 1px solid #000">
-
+					
 						<!-- 부서목록 제목 -->
 						<h4 style="text-align: center; font-size: 20px; margin-bottom: 10%">부서 목록</h4>
 						<!-- 테이블 항목 표시 -->
@@ -211,11 +224,10 @@ $(document).ready(function() {
 							<table style="width: 100%; height: auto; text-align: center;"
 								class="table borderless">
 								<tr>
-									<td style="width: 20%; text-align: center">부서명</td>
+									<td style="width: 20%; text-align: center">선택</td>
+									<td style="width: 30%; text-align: center">부서명</td>
 									<td style="width: 20%; text-align: center">부서코드</td>
-									<td style="width: 40%; text-align: center">부서전화번호</td>
-									<td style="width: 20%; text-align: center">수정</td>
-									
+									<td style="width: 30%; text-align: center">부서전화번호</td>
 								</tr>
 							</table>
 						</div>
@@ -223,22 +235,27 @@ $(document).ready(function() {
 						<!-- 부서 목록 -->
 						<div class="table-responsive" style="width: 100%; height: 420px;">
 							<div id="usersListTable">
-								<table style="width: 100%; height: auto; text-align: center"
+								<table style="width: 100%; height: auto; text-align: center; overflow: scroll-y;"
 									class="table table-hover">
-
+									<form method = "POST" action = "inputAction">
 									<c:forEach var="dept" items="${dept_list}">
 															 <!--  controller에서 받아옴 -->
 										<tr>
-											<td style="width: 20%; text-align: center">${dept.dept_name }</td>
-											<td style="width: 20%; text-align: center">${dept.dept_num }</td>
-											<td style="width: 40%; text-align: center">${dept.dept_tel }</td>
-											<td style="width: 40%; text-align: center">
-												<button type="button" class="btn btn-success form-control" onclick="btn_${dept.dept_num}()">수정</button>
+											<td style="width: 20%; text-align: center">
+												<%-- <button type="button" class="btn btn-success form-control" onclick="btn_${dept.dept_num}()">수정</button> --%>
+												<input type ="radio" name = "dept_list" value = "${dept.dept_num}" />
 											</td>
+											<td style="width: 30%; text-align: center">${dept.dept_name }</td>
+											<td style="width: 20%; text-align: center">${dept.dept_num }</td>
+											<td style="width: 30%; text-align: center">${dept.dept_tel }</td>
 										</tr>
 									</c:forEach>
-
+								</form>
 								</table>
+									<div style = "float: right; width: 100%; height: 30px; margin-top: 30%;">
+										<a href = "" class = "btn btn-warning">삭제</a>
+										<a href = "" class = "btn btn-info">수정</a>					
+									</div>
 							</div>
 						</div>
 					</div>
@@ -257,28 +274,31 @@ $(document).ready(function() {
 							<div class="row" style="margin-top: 7%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서명</p>
-									<input type="text" class="form-control" name = "dept_name" id = "dept_name">
+									<input type="text" class="form-control" name = "dept_name" id = "dept_name" value = "${dept.dept_name }">
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서번호</p>
-									<input type="text" class="form-control" name = "dept_num" id = "dept_num">
+									<input type="text" class="form-control" name = "dept_num" id = "dept_num" value = "${dept.dept_num }" readonly>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서 전화번호</p>
-									<input type="text" class="form-control" name = "dept_tel" id = "dept_tel">
+									<input type="text" class="form-control" name = "dept_tel" id = "dept_tel" value = "${dept.dept_tel }">
 								</div>
 							</div>
 
 							<div class="row" style="margin-top: 40%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
-									<button type="button" class="btn btn-info form-control" id = "updateBtn">수정</button>
-									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button>
+									<!-- <button type="button" class="btn btn-info form-control" id = "updateBtn">수정</button>
+									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button> -->
+									<a href = "./update?dept_num=${dept.dept_num }"class = "btn btn-success">수정</a>
+									
+									<input type = "submit" class = "btn btn-info" value = "등록">
 								</div>
 
 							
@@ -286,6 +306,7 @@ $(document).ready(function() {
 						</div>
 					</div>
 				</div>
+				</form>
 			</div>
 			<!-- 두 번째 row칸  -->
 		</div>

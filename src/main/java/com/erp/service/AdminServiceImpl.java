@@ -1,18 +1,18 @@
 package com.erp.service;
-
+//admin 관리자
 import java.util.List;
 
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.erp.dao.ErpDAO;
+import com.erp.dao.AdminDAO;
 import com.erp.vo.Department;
 import com.erp.vo.Users;
 @Service
-public class ErpServiceImpl implements ErpService {
+public class AdminServiceImpl implements AdminService {
 	@Inject
-	ErpDAO dao;
+	AdminDAO dao;
 	
 
 	@Override
@@ -58,6 +58,11 @@ public class ErpServiceImpl implements ErpService {
 	@Override
 	public void joinAction(Users users) throws Exception {
 		dao.join(users);
+	}
+
+	@Override
+	public void UpdateDeptAction(Department department) throws Exception {
+		dao.updateDept(department);
 	}
 	
 }

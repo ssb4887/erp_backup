@@ -14,7 +14,7 @@
     <!-- 외부 CSS -->
     <link rel="stylesheet" href="${path}/resources/css/correct_auth.css" />
     <!-- 부트스트랩 CSS -->
-    <link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap-test.css" />
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
     <!-- 제이쿼리  -->
     <script src="${path}/resources/js/jquery.js"></script>
