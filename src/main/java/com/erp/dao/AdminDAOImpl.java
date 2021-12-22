@@ -63,7 +63,5 @@ public class AdminDAOImpl implements AdminDAO {
 	public void updateDept(Department department) throws Exception {
 		sqlSession.update(SESSION + ".updateDept", department);
 	}
-	
-	
 
 }

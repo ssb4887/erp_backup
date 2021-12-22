@@ -115,10 +115,24 @@ public class AdminController {
 		
 		return "redirect:/admin/add_employee";
 	}
+
 	
-	@RequestMapping(value = "/updateDetpAction", method = RequestMethod.POST)
-	public String updateDetpAction(Department department) throws Exception {
+	// department
+	@RequestMapping(value = "/getDepartment", method = RequestMethod.POST)
+	@ResponseBody
+	// 리스트 전체를 다 긁어와야지 동시간대 동시작업에 문제가 안생긴다.	
+	public Department getDepartment(String dept_num) throws Exception {
 		
-		return null;
+		return service.getDepartment(dept_num);
+		
+	}
+	
+	@RequestMapping(value = "/updateDeptAction", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Department> updateDeptAction(Department department) throws Exception {
+		
+		service.UpdateDeptAction(department);
+		
+		return service.getDeptList();
 	}
 }

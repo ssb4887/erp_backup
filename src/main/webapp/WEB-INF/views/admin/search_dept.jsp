@@ -22,110 +22,123 @@
 
 <script>
 $(document).ready(function() {
-		// 등록, 수정 창 바꾸기
-		var add_dept = $('#dept_add').val();
-		var update_dept = $('#dept_update').val();
 		
 		$('#dept_update').hide();
 		$('#updateBtn').hide();
 		
 		
-
-		
-
-				
 		// ajax 로 리스트 받아오기
 		$('#searchNameBtn').click(function() {
-										var user_name = $('#dept_name').val();
-										$.ajax({ // ajax 는 데이터를 받아오는거 url받아오는거 아님 
-													type : 'GET',
-													url : './searchName',
-													data : {
-														// 문자열 : 변수값...
-														user_name : user_name
-													},
-													dataType : 'JSON',
-													success : function(data) {
-														//아이디에 해당하는 태그 자손들이 모두 삭제 
-														$('#deptListTable')
-																.empty();
-														var str = '';
-														str += '<table style="width: 100%; height: auto; text-align: center" class="table table-hover">';
-														for (var i = 0; i < data.length; i++) {
-
-															str += '<tr>';
-															str += '<td style="width: 10%; text-align: center">'
-																	+ data[i].user_num
-																	+ '</td>';
-															str += '<td style="width: 10%; text-align: center">********</td>';
-															str += '<td style="width: 10%; text-align: center">'
-																	+ data[i].user_name
-																	+ '</td>';
-
-															str += '</tr>';
-
-														}
-														str += '</table>';
-														$('#usersListTable')
-																.append(str);
-													}
-
-												});
-
-									});
+				var user_name = $('#dept_name').val();
+				$.ajax({ // ajax 는 데이터를 받아오는거 url받아오는거 아님 
+							type : 'GET',
+							url : './searchName',
+							data : {
+								// 문자열 : 변수값...
+								user_name : user_name
+							},
+							dataType : 'JSON',
+							success : function(data) {
+								//아이디에 해당하는 태그 자손들이 모두 삭제 
+								$('#deptListTable')
+										.empty();
+								var str = '';
+								str += '<table style="width: 100%; height: auto; text-align: center" class="table table-hover">';
+								for (var i = 0; i < data.length; i++) {
+	
+									str += '<tr>';
+									str += '<td style="width: 10%; text-align: center">'
+											+ data[i].user_num
+											+ '</td>';
+									str += '<td style="width: 10%; text-align: center">********</td>';
+									str += '<td style="width: 10%; text-align: center">'
+											+ data[i].user_name
+											+ '</td>';
+	
+									str += '</tr>';
+	
+								}
+								str += '</table>';
+								$('#usersListTable')
+										.append(str);
+							}
+	
+						});
+	
+			});
 		
-
+		$('#table_update_btn').click(function(){
+			
+			var dept_num = $('input[name="table_dept_num"]:checked').val();
+			
+			$.ajax({
+				type : 'POST',
+				url : './getDepartment',
+				data : {
+					dept_num : dept_num
+				},
+				dataType : "JSON",
+				success : function(data) {
+					$('#dept_num').val(data.dept_num);
+					$('#dept_name').val(data.dept_name);
+					$('#dept_tel').val(data.dept_tel);
+					$('#updateBtn').show();
+					$('#dept_update').show();
+					$('#addBtn').hide();
+					$('#dept_add').hide();
+				}
+				
+			});
+			
+			
+			
+		});
+		$('#updateBtn').click(function(){
+			
+			var dept_num = $('#dept_num').val();
+			var dept_name = $('#dept_name').val();
+			var dept_tel = $('#dept_tel').val();
+			
+			$.ajax({
+				type : 'POST',
+				url : './updateDeptAction',
+				data : {
+					dept_num : dept_num,
+					dept_name : dept_name,
+					dept_tel : dept_tel
+				},
+				dataType : "JSON",
+				success : function(data) {
+					$('#deptListTable').empty();
+					var str = '';
+					str += '<table style="width: 100%; height: auto; text-align: center; overflow: scroll-y;"class="table table-hover">';
+					for(var i = 0; i < data.length; i++) {
+						str += '<tr>';
+							str += '<td style="width: 20%; text-align: center">';
+							str += '<input type ="radio" name = "table_dept_num" value = "' + data[i].dept_num + '" /></td>';
+							str += '<td style="width: 30%; text-align: center">' + data[i].dept_name +'</td>';
+							str += '<td style="width: 20%; text-align: center">' + data[i].dept_num +'</td>';
+							str += '<td style="width: 30%; text-align: center">' + data[i].dept_tel +'</td>';
+						str += '</tr>';
+					}
+					str += '</table>';
+ 					$('#deptListTable').append(str); 
+					
+ 					// 수정이 완료되면
+ 					$('#dept_num').val('');
+					$('#dept_name').val('');
+					$('#dept_tel').val('');
+					$('#updateBtn').hide();
+					$('#dept_update').hide();
+					$('#addBtn').show();
+					$('#dept_add').show();
+					// 빈문자열을 넣어줘야빈값을 넣어준다는 뜻이고 아무 것도 없이 	val() 면 거기 있는 값을 가져오는 것이다.	
+				}
+			});
+			
+		});
 		
 });
-function addBtn(){
-	$('#addBtn').click(function(){
-		$('#dept_update').show();
-		$('#dept_add').hide();
-		$('#addBtn').hide();
-		$('#updateBtn').show();
-		
-	});
-}
-
-function updateBtn(){
-	$('#updateBtn').click(function(){
-		$('#dept_update').hide();
-		$('#dept_add').show();
-		$('#addBtn').show();
-		$('#updateBtn').hide();
-	});
-}
-
-//수정 버튼을 눌렀을때
-function btn_DEF() {
-  	$('#dept_num').val('DEF');
-	$('#dept_name').val('배정부서없음');
-	$('#dept_tel').val('051-444-4444');
-	updateBtn();
-}
-
-function btn_PUR() {
-	$('#dept_num').val('PUR');
-	$('#dept_name').val('구매관리부');
-	$('#dept_tel').val('051-333-3333');
-	updateBtn();
-}
-
-function btn_SAL() {
-	$('#dept_num').val('SAL');
-	$('#dept_name').val('영업부');
-	$('#dept_tel').val('051-111-1111');
-	updateBtn();
-}
-
-function btn_HRD() {
-	$('#dept_num').val('HRD');
-	$('#dept_name').val('인사부');
-	$('#dept_tel').val('051-222-2222');
-	updateBtn();
-}
-
-
 </script>
 
 </head>
@@ -234,29 +247,28 @@ function btn_HRD() {
 
 						<!-- 부서 목록 -->
 						<div class="table-responsive" style="width: 100%; height: 420px;">
-							<div id="usersListTable">
+							<div id="deptListTable">
 								<table style="width: 100%; height: auto; text-align: center; overflow: scroll-y;"
 									class="table table-hover">
-									<form method = "POST" action = "inputAction">
 									<c:forEach var="dept" items="${dept_list}">
 															 <!--  controller에서 받아옴 -->
 										<tr>
 											<td style="width: 20%; text-align: center">
 												<%-- <button type="button" class="btn btn-success form-control" onclick="btn_${dept.dept_num}()">수정</button> --%>
-												<input type ="radio" name = "dept_list" value = "${dept.dept_num}" />
+												<input type ="radio" name = "table_dept_num" value = "${dept.dept_num}" />
 											</td>
 											<td style="width: 30%; text-align: center">${dept.dept_name }</td>
 											<td style="width: 20%; text-align: center">${dept.dept_num }</td>
 											<td style="width: 30%; text-align: center">${dept.dept_tel }</td>
 										</tr>
 									</c:forEach>
-								</form>
 								</table>
-									<div style = "float: right; width: 100%; height: 30px; margin-top: 30%;">
-										<a href = "" class = "btn btn-warning">삭제</a>
-										<a href = "" class = "btn btn-info">수정</a>					
-									</div>
+									
 							</div>
+							<div style = "float: right; width: 100%; height: 30px; margin-top: 30%;">
+										<button type ="button" id = "delete_btn" class = "btn btn-warning">삭제</button>
+										<button type ="button" id = "table_update_btn" class = "btn btn-info">수정</button>
+									</div>
 						</div>
 					</div>
 				</div>
@@ -274,31 +286,29 @@ function btn_HRD() {
 							<div class="row" style="margin-top: 7%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서명</p>
-									<input type="text" class="form-control" name = "dept_name" id = "dept_name" value = "${dept.dept_name }">
+									<input type="text" class="form-control" name = "dept_name" id = "dept_name" >
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서번호</p>
-									<input type="text" class="form-control" name = "dept_num" id = "dept_num" value = "${dept.dept_num }" readonly>
+									<input type="text" class="form-control" name = "dept_num" id = "dept_num" readonly>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서 전화번호</p>
-									<input type="text" class="form-control" name = "dept_tel" id = "dept_tel" value = "${dept.dept_tel }">
+									<input type="text" class="form-control" name = "dept_tel" id = "dept_tel" >
 								</div>
 							</div>
 
 							<div class="row" style="margin-top: 40%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
-									<!-- <button type="button" class="btn btn-info form-control" id = "updateBtn">수정</button>
-									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button> -->
-									<a href = "./update?dept_num=${dept.dept_num }"class = "btn btn-success">수정</a>
+									<button type="button" class="btn btn-info form-control" id = "updateBtn">수정</button>
+									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button>
 									
-									<input type = "submit" class = "btn btn-info" value = "등록">
 								</div>
 
 							
