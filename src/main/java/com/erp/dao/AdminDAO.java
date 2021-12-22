@@ -28,7 +28,16 @@ public interface AdminDAO {
 	// 사원 등록
 	public void join(Users users) throws Exception;
 	
+	// 부서 추가
+	public void addDept(Department department) throws Exception;
+	
 	// 부서 수정
 	public void updateDept(Department department) throws Exception;
+	
+	// 부서 삭제
+	public void deleteDept(Department department) throws Exception;
+	
+	// 부서 검색
+	public List<Department> serachDept(String dept_name) throws Exception;
 	
 }

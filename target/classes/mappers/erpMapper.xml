@@ -34,6 +34,12 @@
 				WHERE 	dept_num = #{dept_num}
 		</select>
 		
+		<!--  사원 리스트 불러오기 -->
+		<select id = "getUsersList" resultType = "Users">
+				SELECT *
+				FROM USERS
+				WHERE user_num NOT LIKE 'admin'
+		</select>
 		
 		<!-- 사원등록 -->
 		<insert id = "join">
@@ -41,12 +47,7 @@
 		 		VALUES(#{user_num}, SHA2(#{user_pw},256), #{user_name}, #{dept_num}, #{user_tel}, #{user_email}, #{user_add} )
 		</insert>
 		
-		<!--  사원 리스트 불러오기 -->
-		<select id = "getUsersList" resultType = "Users">
-				SELECT *
-				FROM USERS
-				WHERE user_num NOT LIKE 'admin'
-		</select>
+
 		
 		<!-- 유저 이름 검색 -->
 		<select id = "searchName" resultType = "Users">
@@ -56,12 +57,31 @@
 				AND user_num NOT LIKE 'admin'
 		</select>
 		
+		<!-- 부서 추가 -->
+		<insert id = "addDept">
+				INSERT INTO DEPARTMENT
+				VALUES(#{dept_num}, #{dept_name}, #{dept_tel})
+		</insert>
 		
 		<!-- 부서 수정 기능 -->
 		<update id = "updateDept">
 				UPDATE DEPARTMENT 
 				SET dept_name = #{dept_name}, dept_tel = #{dept_tel}
 				WHERE dept_num = #{dept_num}
-				
 		</update>
+		
+		<!-- 부서 삭제 기능 -->
+		<delete id = "deleteDept">
+				DELETE FROM  DEPARTMENT
+				WHERE dept_num = #{dept_num}
+		</delete>
+		
+		<!-- 부서 검색 기능 -->
+		<select id = "searchDept" resultType = "Department">
+				SELECT *
+				FROM DEPARTMENT
+				WHERE dept_name LIKE #{dept_name}
+		</select>
+		
+		
 </mapper>
