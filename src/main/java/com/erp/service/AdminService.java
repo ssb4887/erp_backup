@@ -18,5 +18,11 @@ public interface AdminService {
 	
 	public void joinAction(Users users) throws Exception;
 	
+	public void addDeptAction(Department department) throws Exception;
+	
 	public void UpdateDeptAction(Department department) throws Exception;
+	
+	public void DeleteDeptAction(Department department) throws Exception;
+	
+	public List<Department> searchDeptAction(String dept_name) throws Exception;
 }

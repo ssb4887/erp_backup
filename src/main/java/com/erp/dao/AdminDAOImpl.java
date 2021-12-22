@@ -58,10 +58,27 @@ public class AdminDAOImpl implements AdminDAO {
 	public void join(Users users) throws Exception {
 		sqlSession.insert(SESSION + ".join", users);
 	}
+	
+	@Override
+	public void addDept(Department department) throws Exception {
+		sqlSession.insert(SESSION + ".addDept", department);
+	}
 
 	@Override
 	public void updateDept(Department department) throws Exception {
 		sqlSession.update(SESSION + ".updateDept", department);
 	}
+
+	@Override
+	public void deleteDept(Department department) throws Exception {
+		sqlSession.delete(SESSION + ".deleteDept", department);
+	}
+
+	@Override
+	public List<Department> serachDept(String dept_name) throws Exception {
+		return sqlSession.selectList(SESSION + ".searchDept", dept_name);
+	}
+
+
 
 }

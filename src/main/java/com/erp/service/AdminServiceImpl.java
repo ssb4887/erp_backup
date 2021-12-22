@@ -59,10 +59,30 @@ public class AdminServiceImpl implements AdminService {
 	public void joinAction(Users users) throws Exception {
 		dao.join(users);
 	}
+	
+	@Override
+	public void addDeptAction(Department department) throws Exception {
+		dao.addDept(department);
+	}
 
 	@Override
 	public void UpdateDeptAction(Department department) throws Exception {
 		dao.updateDept(department);
 	}
+
+	@Override
+	public void DeleteDeptAction(Department department) throws Exception {
+		dao.deleteDept(department);
+	}
+
+	@Override
+	public List<Department> searchDeptAction(String dept_name) throws Exception {
+		
+		dept_name = "%" + dept_name + "%";
+		
+		return dao.serachDept(dept_name);
+	}
+
+
 	
 }

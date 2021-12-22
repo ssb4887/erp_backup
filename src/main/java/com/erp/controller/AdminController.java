@@ -127,6 +127,15 @@ public class AdminController {
 		
 	}
 	
+	@RequestMapping(value = "/addDeptAction", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Department> addDeptAction(Department department) throws Exception {
+		
+		service.addDeptAction(department);
+		
+		return service.getDeptList();
+	}
+	
 	@RequestMapping(value = "/updateDeptAction", method = RequestMethod.POST)
 	@ResponseBody
 	public List<Department> updateDeptAction(Department department) throws Exception {
@@ -134,5 +143,23 @@ public class AdminController {
 		service.UpdateDeptAction(department);
 		
 		return service.getDeptList();
+	}
+	
+	@RequestMapping(value = "/deleteDeptAction", method = RequestMethod.POST) 
+	@ResponseBody
+	public List<Department> deleteDeptAction(Department department) throws Exception {
+		
+		service.DeleteDeptAction(department);
+		
+		return service.getDeptList();
+	}
+	
+	@RequestMapping(value = "/searchDeptAction", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Department> searchDeptAction(String dept_name) throws Exception {
+		
+		List<Department> list = service.searchDeptAction(dept_name);
+		
+		return list;  
 	}
 }
