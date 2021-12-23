@@ -110,6 +110,7 @@ $(document).ready(function() {
 						str += '<tr>';
 							str += '<td style="width: 20%; text-align: center">';
 							str += '<input type ="radio" name = "table_dept_num" value = "' + data[i].dept_num + '" /></td>';
+							str += '<input type = "hidden" id = "' + data[i].dept_num + '" value="' + data[i].dept_name + '"/></td>';
 							str += '<td style="width: 30%; text-align: center">' + data[i].dept_name +'</td>';
 							str += '<td style="width: 20%; text-align: center">' + data[i].dept_num +'</td>';
 							str += '<td style="width: 30%; text-align: center">' + data[i].dept_tel +'</td>';
@@ -191,6 +192,7 @@ $(document).ready(function() {
 						str += '<tr>';
 							str += '<td style="width: 20%; text-align: center">';
 							str += '<input type ="radio" name = "table_dept_num" value = "' + data[i].dept_num + '" /></td>';
+							str += '<input type = "hidden" id = "' + data[i].dept_num + '" value="' + data[i].dept_name + '"/></td>';
 							str += '<td style="width: 30%; text-align: center">' + data[i].dept_name +'</td>';
 							str += '<td style="width: 20%; text-align: center">' + data[i].dept_num +'</td>';
 							str += '<td style="width: 30%; text-align: center">' + data[i].dept_tel +'</td>';
@@ -246,6 +248,7 @@ $(document).ready(function() {
 								str += '<tr>';
 									str += '<td style="width: 20%; text-align: center">';
 									str += '<input type ="radio" name = "table_dept_num" value = "' + data[i].dept_num + '" /></td>';
+									str += '<input type = "hidden" id = "' + data[i].dept_num + '" value="' + data[i].dept_name + '"/></td>';
 									str += '<td style="width: 30%; text-align: center">' + data[i].dept_name +'</td>';
 									str += '<td style="width: 20%; text-align: center">' + data[i].dept_num +'</td>';
 									str += '<td style="width: 30%; text-align: center">' + data[i].dept_tel +'</td>';
@@ -280,6 +283,7 @@ $(document).ready(function() {
 								str += '<tr>';
 									str += '<td style="width: 20%; text-align: center">';
 									str += '<input type ="radio" name = "table_dept_num" value = "' + data[i].dept_num + '" /></td>';
+									str += '<input type = "hidden" id = "' + data[i].dept_num + '" value="' + data[i].dept_name + '"/></td>';
 									str += '<td style="width: 30%; text-align: center">' + data[i].dept_name +'</td>';
 									str += '<td style="width: 20%; text-align: center">' + data[i].dept_num +'</td>';
 									str += '<td style="width: 30%; text-align: center">' + data[i].dept_tel +'</td>';
@@ -337,50 +341,37 @@ $(document).ready(function() {
 
 		<div class="container" style="margin-top: 5%;">
 			<!--  전체 기준 그리드 -->
-			
-
-			<!-- 두 번째 row칸 시작 -->
 			<div class="row">
+			
 			<!-- 테이블 항목(왼쪽) -->
-				<div class="form-group col-sm-6 col-md-6 col-lg-6" class="table-responsive"	style="width: 570px; height: 700px; margin-left: 1%;">
+				<div class="form-group col-sm-6 col-md-6 col-lg-6" class="table-responsive"	style="width: 700px; height: 70vh; margin-left: 1%;">
 					
 					<div class="jumbotron" style="background-color: #f7fbfc; border: 2px solid #b9d7ea;">
 					
-					
-					
-					
-					
+						<!-- 검색 폼, 테이블 -->
 
-				<!-- 검색 폼, 테이블 -->
-				
-					
 						<!-- 검색어 입력 -->
 						<div class="row">
+						
 							<div class="form-group col-sm-6 col-md-6 col-lg-6">
 								<input type="text" name="search_dept_name" class="form-control"
 									placeholder="부서명 검색" id="search_dept_name" />
 							</div>
 
 							<!-- 검색 버튼(이름 기준)	 -->
-							<div class="form-group col-sm-3 col-md-3 col-lg-3">
-								<button type="button" class="btn btn-info btn-block"
-									style="background-color: #b9d7ea; border: 1px solid #b9d7ea"
-									id="searchDeptBtn">검색</button>
+							<div class="form-group col-sm-2 col-md-2 col-lg-2">
+								<button type="button" class="btn btn-info btn-block" style="background-color: #b9d7ea; border: 1px solid #b9d7ea"	id="searchDeptBtn">검색</button>
 							</div>
-							<button type ="button" id = "delete_btn" class = "btn btn-warning">삭제</button>
-											<button type ="button" id = "table_update_btn" class = "btn btn-info">수정</button>
+							
+							<div class="form-group col-sm-2 col-md-2 col-lg-2">
+								<button type ="button" id = "delete_btn" class = "btn btn-warning btn-block">삭제</button>
+							</div>
+							
+							<div class="form-group col-sm-2 col-md-2 col-lg-2">
+								<button type ="button" id = "table_update_btn" class = "btn btn-info btn-block">수정</button>
+							</div>
 
-							<!-- 권한 관리 -->
-							<div class="form-group col-sm-3 col-md-3 col-lg-3">
-							</div>
-						
-						
-					
-					
-				</div>
-			
-			
-			
+						</div>
 			
 			
 						<!-- 부서목록 제목 -->
@@ -398,16 +389,17 @@ $(document).ready(function() {
 							</table>
 						</div>
 
+
 						<!-- 부서 목록 -->
-						<div class="table-responsive" style="width: 100%; height: 380px;">
+						<div class="table-responsive" style="width: 100%; height: 50vh ">
 							<div id="deptListTable">
-								<table style="width: 100%; height: auto; text-align: center; overflow: scroll-y;"
-									class="table table-hover">
-									<c:forEach var="dept" items="${dept_list}">
-															 <!--  controller에서 받아옴 -->
+								<table style="width: 100%; height: auto; text-align: center; overflow: scroll-y;" class="table table-hover">
+									<c:forEach var="dept" items="${dept_list}"> <!--  controller에서 받아옴 -->
+															
 										<tr>
 											<td style="width: 20%; text-align: center">
 												<input type ="radio" name = "table_dept_num" value = "${dept.dept_num}" />
+												<!-- hidden으로 필요한 값을 숨겨놓고 삭제 확인창에 삭제할 목록 이름을 띄운다.	 -->
 												<input type = "hidden" id = "${dept.dept_num}" value="${dept.dept_name }"/>
 											</td>
 											<td style="width: 30%; text-align: center">${dept.dept_name }</td>
@@ -420,49 +412,50 @@ $(document).ready(function() {
 									
 							</div>
 						</div>
-								<!-- 삭제, 수정 버튼 -->
-								<div style = "width: 100%; height: 30px;">
-											
-								</div>
-								
+						
 					</div>
 				</div>
 
 
 				<!-- 등록, 수정 하는 화면(오른쪽) -->
-				<div class="form-group col-sm-6 col-md-6 col-lg-6" style="height: 700px">
+				<div class="form-group col-sm-6 col-md-6 col-lg-6" style="width: 430px; height: 100vh;">
 			
-					<div class="jumbotron" style="width: 100%; height: 647px; background-color: #f7fbfc; border: 2px solid #b9d7ea">
-					<div class="form-group col-sm-12 col-md-12 col-lg-12">
-						<div style = "width: 100%; height: 49px"></div>
-					</div>
+					<div class="jumbotron" style="width: 100%; height: 88vh; background-color: #f7fbfc; border: 2px solid #b9d7ea">
+						<div class="form-group col-sm-12 col-md-12 col-lg-12">
+							<div style = "width: 100%; height: 49px"></div>
+						</div>
+						<!-- 제목  -->
 						<h4 style="text-align: center; font-size: 20px" id = "dept_add">부서 등록</h4>
 						<h4 style="text-align: center; font-size: 20px" id = "dept_update">부서 수정</h4>
 						
 						<div class="row">
-
+							
+							<!-- 부서명 -->
 							<div class="row" style="margin-top: 7%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서명</p>
 									<input type="text" class="form-control" name = "dept_name" id = "dept_name" >
 								</div>
 							</div>
-
+							
+							<!-- 부서 번호 -->
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서번호</p>
 									<input type="text" class="form-control" name = "dept_num" id = "dept_num">
 								</div>
 							</div>
-
+	
+							<!-- 부서 전화번호  -->
 							<div class="row">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<p style="font-size: 16px">부서 전화번호</p>
 									<input type="text" class="form-control" name = "dept_tel" id = "dept_tel" >
 								</div>
 							</div>
-
-							<div class="row" style="margin-top: 35%">
+							
+							<!-- 등록, 수정 버튼 -->
+							<div class="row" style="margin-top: 20%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<button type="button" class="btn btn-success form-control" id = "updateBtn">수정</button>
 									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button>
@@ -474,7 +467,8 @@ $(document).ready(function() {
 					</div>
 				</div>
 			</div>
-			<!-- 두 번째 row칸  끝 -->
+			
+			
 		</div>
 	</div>
 
