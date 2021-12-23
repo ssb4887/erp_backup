@@ -119,7 +119,7 @@ $(document).ready(function() {
 					str += '</table>';
  					$('#deptListTable').append(str); 
 					
- 					// 수정이 완료되면
+ 					// 등록이 완료되면
  					$('#dept_num').val('');
 					$('#dept_name').val('');
 					$('#dept_tel').val('');
@@ -211,6 +211,7 @@ $(document).ready(function() {
 					$('#dept_add').show();
 					$('#dept_num').removeAttr('readonly');
 					// 빈문자열을 넣어줘야빈값을 넣어준다는 뜻이고 아무 것도 없이 	val() 면 거기 있는 값을 가져오는 것이다.	
+					alert(dept_name + ' (으)로 수정이 완료되었습니다.');
 				}
 			});
 			
