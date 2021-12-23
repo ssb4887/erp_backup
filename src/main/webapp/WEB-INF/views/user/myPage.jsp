@@ -30,26 +30,29 @@
 			<!-- nav 상단부분 -->
 			<div class="nav_top">
 				<div class="profile"></div>
-				<span>admin</span>
+				<span>user</span>
 			</div>
 
 			<!-- nav 하단부분 -->
 			<div class="nav_bottom">
-				<ul class="nav_list">
-					<li><a href="adminMain">ERP_Project</a></li>
-					<li><a href="search_employee">사원관리</a></li>
-					<li><a href="add_employee">사원등록</a></li>
-					<li><a href="search_dept">부서관리</a></li>
-					<li><a href="correct_auth">부서권한관리</a></li>
-				</ul>
-			</div>
+          		<ul class="nav_list">
+            		<li><a href="main">ERP_Project</a></li>
+            		<li style="background-color: #b9d7ea"><a href="myPage">마이페이지</a></li>
+            		<li><a href="search_product">제품관리</a></li>
+            		<li><a href="search_salesList">영업관리</a></li>
+            		<li><a href="search_supplier">공급처관리</a></li>
+            		<li ><a href="search_clients">고객관리</a></li>
+            		<li><a href="search_orders">발주관리</a></li>
+            		<li><a href="">회계</a></li>
+          		</ul>
+        	</div>
 		</div>
 
 
-		<!-- 상단 bar -->
+		<!-- 상단 bar  -->
 		<div id="topBar">
 			<!-- 상단 제목 -->
-			<span style= "font-size: 2em; margin: 2% 0 0 13%; font-weight: 700; line-height: 100px;">관리자 페이지</span>
+			<span style= "font-size: 2em; margin: 2% 0 0 13%; font-weight: 700; line-height: 100px;">마이 페이지</span>
 			<div style="float: right; line-height: 100px;">
 				<a href="${path }/logout">로그아웃</a>
 			</div>
