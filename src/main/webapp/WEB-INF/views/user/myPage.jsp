@@ -49,7 +49,7 @@
 		</div>
 
 
-		<!-- 상단 bar -->
+		<!-- 상단 bar  -->
 		<div id="topBar">
 			<!-- 상단 제목 -->
 			<span style= "font-size: 2em; margin: 2% 0 0 13%; font-weight: 700; line-height: 100px;">마이 페이지</span>
