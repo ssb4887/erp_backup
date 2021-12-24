@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.erp.service.AdminService;
+import com.erp.service.ProductService;
+import com.erp.vo.Product;
 import com.erp.vo.Users;
 
 // 연결해주는 메인 컨트롤러
@@ -24,6 +26,8 @@ public class MainController {
 	
 	@Inject
 	AdminService service;
+	@Inject
+	ProductService proservice;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
@@ -45,8 +49,26 @@ public class MainController {
 	@RequestMapping(value="/myPage", method = RequestMethod.GET)
 	public String userMain(Model model) {
 		return "user/myPage";
-	//
 	}
+	// search_product(제품관리)
+	@RequestMapping(value="/search_product", method = RequestMethod.GET) 
+	public String search_product(Model model) throws Exception{
+		
+		List<Product> product_List = proservice.getProductList();
+		model.addAttribute("product_List",product_List);
+		
+		return "user/search_product";
+	}
+	
+	@RequestMapping(value="/searchProduct", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Product> searchProduct(String pro_name) throws Exception{
+		
+		List<Product> pro_list = proservice.searchProduct(pro_name);
+		
+		return pro_list;
+	}
+	
 	// search_clients(고객관리)
 	@RequestMapping(value ="/search_clients", method = RequestMethod.GET)
 	public String search_clients(Model model) {
@@ -57,11 +79,7 @@ public class MainController {
 	public String search_orders(Model model) {
 		return "user/search_orders";
 	}
-	// search_product(제품관리)
-	@RequestMapping(value ="/search_product", method = RequestMethod.GET)
-	public String search_product(Model model) {
-		return "user/search_product";
-	}
+	
 	// search_salesList(영업관리)
 	@RequestMapping(value ="/search_salesList", method = RequestMethod.GET)
 	public String search_salesList(Model model) {

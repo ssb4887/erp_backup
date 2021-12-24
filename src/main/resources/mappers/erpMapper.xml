@@ -81,5 +81,17 @@
 				WHERE dept_name LIKE #{dept_name}
 		</select>
 		
+		<!-- 제품 리스트 불러오기 기능 -->
+		<select id="getProductList" resultType= "Product">
+			SELECT *
+			FROM PRODUCT
+		</select>
+		
+			<!-- 제품  검색 기능 -->
+		<select id="searchProduct" resultType= "Product">
+			SELECT *
+			FROM PRODUCT
+			WHERE pro_name LIKE #{pro_name}
+		</select>
 		
 </mapper>
