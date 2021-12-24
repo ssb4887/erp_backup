@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$('#updateBtn').hide();
 		
 		
-		// ajax 로 리스트 받아오기
+		// 부서이름을 검색하면 	ajax 로 리스트 받아오기
 		$('#searchNameBtn').click(function() {
 				var user_name = $('#dept_name').val();
 				$.ajax({ // ajax 는 데이터를 받아오는거 url받아오는거 아님 
@@ -119,7 +119,7 @@ $(document).ready(function() {
 					str += '</table>';
  					$('#deptListTable').append(str); 
 					
- 					// 수정이 완료되면
+ 					// 등록이 완료되면
  					$('#dept_num').val('');
 					$('#dept_name').val('');
 					$('#dept_tel').val('');
@@ -211,6 +211,7 @@ $(document).ready(function() {
 					$('#dept_add').show();
 					$('#dept_num').removeAttr('readonly');
 					// 빈문자열을 넣어줘야빈값을 넣어준다는 뜻이고 아무 것도 없이 	val() 면 거기 있는 값을 가져오는 것이다.	
+					alert(dept_name + ' (으)로 수정이 완료되었습니다.');
 				}
 			});
 			
@@ -458,7 +459,7 @@ $(document).ready(function() {
 							<div class="row" style="margin-top: 20%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<button type="button" class="btn btn-success form-control" id = "updateBtn">수정</button>
-									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button>
+									<button type="button" class="btn btn-info form-control" id = "addBtn" style="background-color: #769fcd; border: 1px solid #769fcd">등록</button>
 								</div>
 							</div>
 							

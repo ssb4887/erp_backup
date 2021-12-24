@@ -57,7 +57,7 @@
 		
 		<!-- 부서 추가 -->
 		<insert id = "addDept">
-				INSERT INTO DEPARTMENT
+				INSERT INTO DEPARTMENT(dept_num, dept_name, dept_tel)
 				VALUES(#{dept_num}, #{dept_name}, #{dept_tel})
 		</insert>
 		

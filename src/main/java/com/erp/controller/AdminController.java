@@ -60,7 +60,11 @@ public class AdminController {
 	
 	// correct_auth(권한부여)
 	@RequestMapping(value ="/correct_auth", method = RequestMethod.GET)
-	public String correct_auth(Model model) {
+	public String correct_auth(Model model) throws Exception {
+		
+		List<Department> dept_list = service.getDeptList();
+		model.addAttribute("dept_list", dept_list);
+		
 		return "admin/correct_auth";
 	}
 	
@@ -161,5 +165,16 @@ public class AdminController {
 		List<Department> list = service.searchDeptAction(dept_name);
 		
 		return list;  
+	}
+	
+	
+	
+	@RequestMapping(value = "/searchAuthTable", method = RequestMethod.POST)
+	public List<Department> searchAuthTable(Model model) throws Exception {
+		
+		List<Department> dept_list = service.getDeptList();
+		model.addAttribute("dept_list", dept_list);
+		
+		return dept_list;
 	}
 }

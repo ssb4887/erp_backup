@@ -104,7 +104,7 @@ $(document).ready(function(){
 			<div class="container">
 				<div class="col-lg-3"></div>
 				<div class="col-lg-6">
-					<div class="jumbotron" style="background-color: #F7FBFC">
+					<div class="jumbotron" style="background-color: #F7FBFC; background-color: #f7fbfc; border: 2px solid #b9d7ea;">
 						<form method="POST" action="./joinAction">
 							<h3 style="text-align: center; margin: -5% 0 10% 0;">사원등록</h3>
 
@@ -195,7 +195,7 @@ $(document).ready(function(){
 
 							<!-- 제출 버튼 -->
 							<div class="form-group">
-								<input type="submit" class="btn btn-info form-control" value="사원등록">
+								<input type="submit" class="btn btn-info form-control" value="사원등록" style="background-color: #769fcd; border: 1px solid #769fcd">
 							</div>
 						</form>
 					</div>
@@ -304,7 +304,7 @@ $(document).ready(function(){
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" id="getAddrBtn" class="btn btn-primary"
+					<button type="button" id="getAddrBtn" class="btn btn-primary" style="background-color: #769fcd; border: 1px solid #769fcd"
 						data-dismiss="modal">확인</button>
 				</div>
 			</div>
