@@ -45,7 +45,7 @@ public class MainController {
 	@RequestMapping(value="/myPage", method = RequestMethod.GET)
 	public String userMain(Model model) {
 		return "user/myPage";
-	//
+	
 	}
 	// search_clients(고객관리)
 	@RequestMapping(value ="/search_clients", method = RequestMethod.GET)

@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$('#updateBtn').hide();
 		
 		
-		// ajax 로 리스트 받아오기
+		// 부서이름을 검색하면 	ajax 로 리스트 받아오기
 		$('#searchNameBtn').click(function() {
 				var user_name = $('#dept_name').val();
 				$.ajax({ // ajax 는 데이터를 받아오는거 url받아오는거 아님 
@@ -459,7 +459,7 @@ $(document).ready(function() {
 							<div class="row" style="margin-top: 20%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
 									<button type="button" class="btn btn-success form-control" id = "updateBtn">수정</button>
-									<button type="button" class="btn btn-info form-control" id = "addBtn">등록</button>
+									<button type="button" class="btn btn-info form-control" id = "addBtn" style="background-color: #769fcd; border: 1px solid #769fcd">등록</button>
 								</div>
 							</div>
 							
