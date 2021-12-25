@@ -18,9 +18,12 @@
     <script src="${path}/resources/js/jquery.js"></script>
 
 </head>
-
-  <body>
-    <div id="wrap">
+<body>
+<div id="wrap">
+    
+    <!-- 유저 네비게이션 -->
+    <jsp:include page = "userNav.jsp" />
+    <%--
       <!-- nav 시작 -->
 
       <!-- nav bar -->
@@ -36,13 +39,15 @@
           <ul class="nav_list">
             <li><a href="main">ERP_Project</a></li>
             <li><a href="myPage">마이페이지</a></li>
-            <li><a href="search_product">제품관리</a></li>
-            <li><a href="search_salesList">영업관리</a></li>
-            <li style="background-color: #b9d7ea">
-              <a href="search_supplier.html">공급처관리</a>
+            <li><a href="product">제품관리</a></li>
+            <li><a href="salesList">영업관리</a></li>
+            <li><a href="supplier">공급처관리</a></li>
+            <li>
+              <a href="clients">고객관리</a>
             </li>
-            <li><a href="search_clients">고객관리</a></li>
-            <li><a href="search_orders">발주관리</a></li>
+            <li style="background-color: #b9d7ea">
+              <a href="orders">발주관리</a>
+            </li>
             <li><a href="">회계</a></li>
           </ul>
         </div>
@@ -51,11 +56,11 @@
       <!-- 상단 bar -->
       <div id="topBar">
         <!-- 상단 제목 -->
-        <h2>공급처 관리</h2>
+        <h2>발주 관리</h2>
       </div>
-    </div>
-    <!-- nav 끝 -->
 
+    <!-- nav 끝 -->
+ --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
@@ -69,7 +74,7 @@
                   type="text"
                   name="dept_name"
                   class="form-control"
-                  placeholder="공급처 검색"
+                  placeholder="발주 목록 검색"
                 />
               </div>
 
@@ -84,7 +89,7 @@
                 </button>
               </div>
 
-              <!-- 공급처 등록 -->
+              <!-- 고객등록 -->
               <div class="form-group col-sm-2 col-md-2 col-lg-2">
                 <button
                   type="button"
@@ -95,7 +100,7 @@
                 </button>
               </div>
 
-              <!-- 공급처 삭제 -->
+              <!-- 고객삭제 -->
               <div class="form-group col-sm-2 col-md-2 col-lg-2">
                 <button type="button" class="btn btn-danger btn-block">
                   삭제
@@ -128,19 +133,19 @@
           >
             <tr style="font-weight: 700">
               <td style="width: 5%; text-align: center">선택</td>
+              <td style="width: 10%; text-align: center">발주번호</td>
+              <td style="width: 15%; text-align: center">제품번호</td>
+              <td style="width: 20%; text-align: center">발주일자</td>
+              <td style="width: 10%; text-align: center">입고일</td>
+              <td style="width: 10%; text-align: center">수량</td>
+              <td style="width: 13%; text-align: center">금액</td>
               <td style="width: 10%; text-align: center">공급처ID</td>
-              <td style="width: 23%; text-align: center">공급처 주소</td>
-              <td style="width: 10%; text-align: center">공급처 전화번호</td>
-              <td style="width: 7%; text-align: center">담당자</td>
-              <td style="width: 10%; text-align: center">담당자 전화번호</td>
-              <td style="width: 8%; text-align: center">업종</td>
-              <td style="width: 20%; text-align: center">메모</td>
               <td style="width: 7%; text-align: center">수정</td>
             </tr>
           </table>
         </div>
-
         <!-- 목록 -->
+
         <div
           class="table-responsive"
           style="
@@ -160,25 +165,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -192,25 +197,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -224,25 +229,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -256,25 +261,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -288,25 +293,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -320,25 +325,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -352,25 +357,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -384,25 +389,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -416,25 +421,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -448,25 +453,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -480,25 +485,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -512,25 +517,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -544,25 +549,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                2021-12-10
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                2021-12-25
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                500
+              </td>
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -576,57 +581,25 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
+                qqq-232
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
+              <td style="width: 15%; text-align: center; line-height: 30px">
+                asd-1151
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
-              </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                <button type="button" class="btn btn-info btn-block">
-                  수정
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <label><input type="checkbox" value="" /></label>
+                2021-12-10
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                QQL1121
-              </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                부산시 진구
+                2021-12-25
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                051-022-1515
+                500
               </td>
-              <td style="width: 7%; text-align: center; line-height: 30px">
-                홍길동
+              <td style="width: 13%; text-align: center; line-height: 30px">
+                100000000
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                010-2222-2222
-              </td>
-              <td style="width: 8%; text-align: center; line-height: 30px">
-                제조업
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                특이사항 없음
+                QEW21
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -639,5 +612,6 @@
       </div>
     </div>
     <!-- 테이블 끝 -->
-  </body>
+  </div>
+</body>
 </html>

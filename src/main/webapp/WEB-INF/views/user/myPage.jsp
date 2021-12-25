@@ -22,7 +22,10 @@
 
 </head>
 <body>
-	<div id="wrap">
+<div id="wrap">
+    <!-- 유저 네비게이션 -->
+    <jsp:include page = "userNav.jsp" />
+ <%--
 		<!-- nav 시작 -->
 
 		<!-- nav bar -->
@@ -38,14 +41,14 @@
           		<ul class="nav_list">
             		<li><a href="main">ERP_Project</a></li>
             		<li style="background-color: #b9d7ea"><a href="myPage">마이페이지</a></li>
-            		<li><a href="search_product">제품관리</a></li>
-            		<li><a href="search_salesList">영업관리</a></li>
-            		<li><a href="search_supplier">공급처관리</a></li>
-            		<li ><a href="search_clients">고객관리</a></li>
-            		<li><a href="search_orders">발주관리</a></li>
+            		<li><a href="product">제품관리</a></li>
+            		<li><a href="salesList">영업관리</a></li>
+            		<li><a href="supplier">공급처관리</a></li>
+            		<li ><a href="clients">고객관리</a></li>
+            		<li><a href="orders">발주관리</a></li>
             		<li><a href="">회계</a></li>
           		</ul>
-        	</div>
+        	
 		</div>
 
 
@@ -60,7 +63,7 @@
 
 	</div>
 	<!-- nav 끝 -->
-
-	</div>
+ --%>
+</div>	
 </body>
 </html>

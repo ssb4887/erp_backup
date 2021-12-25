@@ -49,13 +49,13 @@ public class AdminController {
 	}
 
 	// search_dept(부서검색)
-	@RequestMapping(value ="/search_dept", method = RequestMethod.GET)
-	public String search_dept(Model model) throws Exception {
+	@RequestMapping(value ="/dept", method = RequestMethod.GET)
+	public String dept(Model model) throws Exception {
 		
 		List<Department> dept_list = service.getDeptList();
 		model.addAttribute("dept_list", dept_list);
 		
-		return "admin/search_dept";
+		return "admin/dept";
 	}
 	
 	// correct_auth(권한부여)
@@ -87,13 +87,13 @@ public class AdminController {
 	}
 	
 	// search_employee(사원관리)
-	@RequestMapping(value ="/search_employee", method = RequestMethod.GET)
-	public String search_employee(Model model) throws Exception {
+	@RequestMapping(value ="/employee", method = RequestMethod.GET)
+	public String employee(Model model) throws Exception {
 		
 		List<Users> user_list = service.getUsersList();
 		model.addAttribute("user_list", user_list);
 		
-		return "admin/search_employee";
+		return "admin/employee";
 	}
 
 	

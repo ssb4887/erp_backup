@@ -63,7 +63,10 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-    <div id="wrap">
+<div id="wrap">
+   	<!-- 유저 네비게이션 -->
+    <jsp:include page = "adminNav.jsp" />
+    <%--
       <!-- nav 시작 -->
 
       <!-- nav bar -->
@@ -93,9 +96,9 @@ $(document).ready(function(){
         <!-- 상단 제목 -->
         <h2>부서등록</h2>
       </div>
-    </div>
+    
     <!-- nav 끝 -->
-
+ --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
@@ -207,5 +210,6 @@ $(document).ready(function(){
       </div>
     </div>
     <!-- 테이블 끝 -->
-  </body>
+</div>
+</body>
 </html>

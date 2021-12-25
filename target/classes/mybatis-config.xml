@@ -7,5 +7,6 @@
 	<typeAliases>
 		<typeAlias alias = "USERS" type = "com.erp.vo.Users" />
 		<typeAlias alias = "DEPARTMENT" type = "com.erp.vo.Department" />
+		<typeAlias alias = "PRODUCT" type = "com.erp.vo.Product" />
 	</typeAliases>
 </configuration>
