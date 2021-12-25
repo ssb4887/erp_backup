@@ -51,7 +51,7 @@ public class MainController {
 		return "user/myPage";
 
 	}
-	// search_product(제품관리)
+	// product(제품관리)
 	@RequestMapping(value="/product", method = RequestMethod.GET) 
 	public String product(Model model) throws Exception{
 		
@@ -61,34 +61,35 @@ public class MainController {
 		return "user/product";
 	}
 	
+	// 제품 이름을 받아와 검색
 	@RequestMapping(value="/searchProduct", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Product> seachProduct(String pro_name) throws Exception{
+	public List<Product> searchProduct(String pro_name) throws Exception{
 		
 		List<Product> pro_list = proservice.searchProduct(pro_name);
 		
 		return pro_list;
 	}
 	
-	// search_clients(고객관리)
+	// clients(고객관리)
 	@RequestMapping(value ="/clients", method = RequestMethod.GET)
 	public String clients(Model model) {
 		return "user/clients";
 	}
-	// search_orders(발주관리)
+	// orders(발주관리)
 	@RequestMapping(value ="/orders", method = RequestMethod.GET)
 	public String orders(Model model) {
 		return "user/orders";
 	}
 	
-	// search_salesList(영업관리)
+	// salesList(영업관리)
 	@RequestMapping(value ="/salesList", method = RequestMethod.GET)
-	public String search_salesList(Model model) {
+	public String salesList(Model model) {
 		return "user/salesList";
 	}
-	// search_supplier (공급처)	
+	// supplier (공급처)	
 	@RequestMapping(value ="/supplier", method = RequestMethod.GET)
-	public String search_supplier(Model model) {
+	public String supplier(Model model) {
 		return "user/supplier";
 	}
 	
@@ -147,13 +148,6 @@ public class MainController {
 		return "redirect:/";
 	}
 
-	
-	@RequestMapping(value = "/searchName", method = RequestMethod.GET)
-	@ResponseBody
-	public List<Users> searchName(String user_name) throws Exception {
-		
-		return service.searchName(user_name);
-	}
 }
 
 
