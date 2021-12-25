@@ -57,9 +57,13 @@
     
   </head>
 
-  <body>
+<body>
   
-    <div id="wrap">
+<div id="wrap">
+    
+   	<!-- 유저 네비게이션 -->
+    <jsp:include page = "adminNav.jsp" />
+    <%--
 		<!-- nav 시작 -->
 		<!-- nav bar -->
 		<div id="nav">
@@ -89,9 +93,9 @@
 			<h2>부서등록</h2>
 		</div>
 		
-	</div>
-	<!-- nav 끝 -->
 
+	<!-- nav 끝 -->
+ --%>
 	<!-- contents 부분 -->
 	<div id="contents" style="float: right; width: 88%; height: 100%;">
 
@@ -304,6 +308,6 @@
 			
 		</div>
 	</div>
-    
-  </body>
+</div>    
+</body>
 </html>

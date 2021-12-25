@@ -66,6 +66,9 @@ $(document).ready(function(){
 </head>
 <body>
 	<div id="wrap">
+	<!-- 유저 네비게이션 -->
+    <jsp:include page = "adminNav.jsp" />
+    <%--
 		<!-- nav 시작 -->
 
 		<!-- nav bar -->
@@ -98,7 +101,7 @@ $(document).ready(function(){
 		</div>
 
 		<!-- nav 끝 -->
-
+		 --%>
 		<!-- 사원등록 컨테이너(Bootstrap) -->
 		<div id="contents" style="float: left; margin-top: 2%;">
 			<div class="container">

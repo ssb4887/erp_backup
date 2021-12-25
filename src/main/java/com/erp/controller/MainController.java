@@ -52,18 +52,18 @@ public class MainController {
 
 	}
 	// search_product(제품관리)
-	@RequestMapping(value="/search_product", method = RequestMethod.GET) 
-	public String search_product(Model model) throws Exception{
+	@RequestMapping(value="/product", method = RequestMethod.GET) 
+	public String product(Model model) throws Exception{
 		
 		List<Product> product_List = proservice.getProductList();
 		model.addAttribute("product_List",product_List);
 		
-		return "user/search_product";
+		return "user/product";
 	}
 	
 	@RequestMapping(value="/searchProduct", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Product> searchProduct(String pro_name) throws Exception{
+	public List<Product> seachProduct(String pro_name) throws Exception{
 		
 		List<Product> pro_list = proservice.searchProduct(pro_name);
 		
@@ -71,25 +71,25 @@ public class MainController {
 	}
 	
 	// search_clients(고객관리)
-	@RequestMapping(value ="/search_clients", method = RequestMethod.GET)
-	public String search_clients(Model model) {
-		return "user/search_clients";
+	@RequestMapping(value ="/clients", method = RequestMethod.GET)
+	public String clients(Model model) {
+		return "user/clients";
 	}
 	// search_orders(발주관리)
-	@RequestMapping(value ="/search_orders", method = RequestMethod.GET)
-	public String search_orders(Model model) {
-		return "user/search_orders";
+	@RequestMapping(value ="/orders", method = RequestMethod.GET)
+	public String orders(Model model) {
+		return "user/orders";
 	}
 	
 	// search_salesList(영업관리)
-	@RequestMapping(value ="/search_salesList", method = RequestMethod.GET)
+	@RequestMapping(value ="/salesList", method = RequestMethod.GET)
 	public String search_salesList(Model model) {
-		return "user/search_salesList";
+		return "user/salesList";
 	}
 	// search_supplier (공급처)	
-	@RequestMapping(value ="/search_supplier", method = RequestMethod.GET)
+	@RequestMapping(value ="/supplier", method = RequestMethod.GET)
 	public String search_supplier(Model model) {
-		return "user/search_supplier";
+		return "user/supplier";
 	}
 	
 	
@@ -114,7 +114,7 @@ public class MainController {
 		// user user_num이 admin(관리자계정)	 이면 관리자 페이지로 로그인 후 이동
 		else if(result.getUser_num().equals("admin")) {
 			session.setAttribute("user", users);
-			url = "redirect:/admin/search_dept";
+			url = "redirect:/admin/dept";
 		}
 		
 		// user 의 dept_num에 부서코드가 있으면 로그인 후 유저 페이지르 이동
@@ -125,7 +125,7 @@ public class MainController {
 				result.getDept_num().equals("DEF")
 				) {
 			session.setAttribute("user", users);
-			url = "redirect:/search_clients";
+			url = "redirect:/clients";
 		}
 		
 		// 그 외 로그인 알림 창 후 다시 로그인 창으로 이동

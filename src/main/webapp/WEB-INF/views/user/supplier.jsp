@@ -18,10 +18,12 @@
     <script src="${path}/resources/js/jquery.js"></script>
 
 </head>
-<body>
-<div id="wrap">
-      <!-- nav 시작 -->
 
+  <body>
+    <div id="wrap">
+      <!-- nav 시작 -->
+      <jsp:include page = "userNav.jsp"/>
+<%--
       <!-- nav bar -->
       <div id="nav">
         <!-- nav 상단부분 -->
@@ -35,13 +37,13 @@
           <ul class="nav_list">
             <li><a href="main">ERP_Project</a></li>
             <li><a href="myPage">마이페이지</a></li>
-            <li><a href="search_product">제품관리</a></li>
-            <li><a href="search_salesList">영업관리</a></li>
-            <li><a href="search_supplier">공급처관리</a></li>
+            <li><a href="product">제품관리</a></li>
+            <li><a href="salesList">영업관리</a></li>
             <li style="background-color: #b9d7ea">
-              <a href="search_clients">고객관리</a>
+              <a href="supplier">공급처관리</a>
             </li>
-            <li><a href="search_orders">발주관리</a></li>
+            <li><a href="clients">고객관리</a></li>
+            <li><a href="orders">발주관리</a></li>
             <li><a href="">회계</a></li>
           </ul>
         </div>
@@ -50,17 +52,17 @@
       <!-- 상단 bar -->
       <div id="topBar">
         <!-- 상단 제목 -->
-        <h2>고객 관리</h2>
-      </div>
+        <h2>공급처 관리</h2>
+      
     </div>
     <!-- nav 끝 -->
-
+ --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
         <!-- 검색 폼 -->
         <div style="width: 500px">
-          <form style="margin: 5% 0 0 7%">
+          <form style="margin: 5% 0 0 4%">
             <!-- 검색어 입력 -->
             <div class="row">
               <div class="form-group col-sm-6 col-md-6 col-lg-6">
@@ -68,7 +70,7 @@
                   type="text"
                   name="dept_name"
                   class="form-control"
-                  placeholder="고객 검색"
+                  placeholder="공급처 검색"
                 />
               </div>
 
@@ -83,7 +85,7 @@
                 </button>
               </div>
 
-              <!-- 고객등록 -->
+              <!-- 공급처 등록 -->
               <div class="form-group col-sm-2 col-md-2 col-lg-2">
                 <button
                   type="button"
@@ -94,7 +96,7 @@
                 </button>
               </div>
 
-              <!-- 고객삭제 -->
+              <!-- 공급처 삭제 -->
               <div class="form-group col-sm-2 col-md-2 col-lg-2">
                 <button type="button" class="btn btn-danger btn-block">
                   삭제
@@ -127,18 +129,19 @@
           >
             <tr style="font-weight: 700">
               <td style="width: 5%; text-align: center">선택</td>
-              <td style="width: 10%; text-align: center">업체번호</td>
-              <td style="width: 15%; text-align: center">업체명</td>
-              <td style="width: 20%; text-align: center">고객 주소</td>
-              <td style="width: 10%; text-align: center">전화번호</td>
-              <td style="width: 10%; text-align: center">담당자</td>
-              <td style="width: 23%; text-align: center">비고</td>
+              <td style="width: 10%; text-align: center">공급처ID</td>
+              <td style="width: 23%; text-align: center">공급처 주소</td>
+              <td style="width: 10%; text-align: center">공급처 전화번호</td>
+              <td style="width: 7%; text-align: center">담당자</td>
+              <td style="width: 10%; text-align: center">담당자 전화번호</td>
+              <td style="width: 8%; text-align: center">업종</td>
+              <td style="width: 20%; text-align: center">메모</td>
               <td style="width: 7%; text-align: center">수정</td>
             </tr>
           </table>
         </div>
-        <!-- 목록 -->
 
+        <!-- 목록 -->
         <div
           class="table-responsive"
           style="
@@ -160,20 +163,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -189,20 +195,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -218,20 +227,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -247,20 +259,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -276,20 +291,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -305,20 +323,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -334,20 +355,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -363,20 +387,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -392,20 +419,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -421,20 +451,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -450,20 +483,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -479,20 +515,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -508,20 +547,23 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
-              <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -537,20 +579,55 @@
               <td style="width: 10%; text-align: center; line-height: 30px">
                 QQL1121
               </td>
-              <td style="width: 15%; text-align: center; line-height: 30px">
-                크라페
-              </td>
-              <td style="width: 20%; text-align: center; line-height: 30px">
-                부산광역시 부산진구 부전로 161
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                부산시 진구
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
                 051-022-1515
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 7%; text-align: center; line-height: 30px">
                 홍길동
               </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
+              </td>
+              <td style="width: 7%; text-align: center; line-height: 30px">
+                <button type="button" class="btn btn-info btn-block">
+                  수정
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="width: 5%; text-align: center; line-height: 30px">
+                <label><input type="checkbox" value="" /></label>
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                QQL1121
+              </td>
               <td style="width: 23%; text-align: center; line-height: 30px">
-                판매율 높음, 주기적 관리 필요
+                부산시 진구
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                051-022-1515
+              </td>
+              <td style="width: 7%; text-align: center; line-height: 30px">
+                홍길동
+              </td>
+              <td style="width: 10%; text-align: center; line-height: 30px">
+                010-2222-2222
+              </td>
+              <td style="width: 8%; text-align: center; line-height: 30px">
+                제조업
+              </td>
+              <td style="width: 20%; text-align: center; line-height: 30px">
+                특이사항 없음
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -562,5 +639,7 @@
         </div>
       </div>
     </div>
+    <!-- 테이블 끝 -->
+  </div>
 </body>
 </html>

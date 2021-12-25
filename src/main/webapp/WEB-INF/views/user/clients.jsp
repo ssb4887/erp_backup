@@ -19,7 +19,10 @@
 
 </head>
 <body>
-    <div id="wrap">
+<div id="wrap">
+    <!-- 유저 네비게이션 -->
+    <jsp:include page = "userNav.jsp" />
+    <%--
       <!-- nav 시작 -->
 
       <!-- nav bar -->
@@ -35,15 +38,13 @@
           <ul class="nav_list">
             <li><a href="main">ERP_Project</a></li>
             <li><a href="myPage">마이페이지</a></li>
-            <li><a href="search_product">제품관리</a></li>
-            <li><a href="search_salesList">영업관리</a></li>
-            <li><a href="search_supplier">공급처관리</a></li>
-            <li>
-              <a href="search_clients">고객관리</a>
-            </li>
+            <li><a href="product">제품관리</a></li>
+            <li><a href="salesList">영업관리</a></li>
+            <li><a href="supplier">공급처관리</a></li>
             <li style="background-color: #b9d7ea">
-              <a href="search_orders">발주관리</a>
+              <a href="clients">고객관리</a>
             </li>
+            <li><a href="orders">발주관리</a></li>
             <li><a href="">회계</a></li>
           </ul>
         </div>
@@ -52,17 +53,17 @@
       <!-- 상단 bar -->
       <div id="topBar">
         <!-- 상단 제목 -->
-        <h2>발주 관리</h2>
+        <h2>고객 관리</h2>
       </div>
-    </div>
+   
     <!-- nav 끝 -->
-
+ --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
         <!-- 검색 폼 -->
         <div style="width: 500px">
-          <form style="margin: 5% 0 0 4%">
+          <form style="margin: 5% 0 0 7%">
             <!-- 검색어 입력 -->
             <div class="row">
               <div class="form-group col-sm-6 col-md-6 col-lg-6">
@@ -70,7 +71,7 @@
                   type="text"
                   name="dept_name"
                   class="form-control"
-                  placeholder="발주 목록 검색"
+                  placeholder="고객 검색"
                 />
               </div>
 
@@ -129,13 +130,12 @@
           >
             <tr style="font-weight: 700">
               <td style="width: 5%; text-align: center">선택</td>
-              <td style="width: 10%; text-align: center">발주번호</td>
-              <td style="width: 15%; text-align: center">제품번호</td>
-              <td style="width: 20%; text-align: center">발주일자</td>
-              <td style="width: 10%; text-align: center">입고일</td>
-              <td style="width: 10%; text-align: center">수량</td>
-              <td style="width: 13%; text-align: center">금액</td>
-              <td style="width: 10%; text-align: center">공급처ID</td>
+              <td style="width: 10%; text-align: center">업체번호</td>
+              <td style="width: 15%; text-align: center">업체명</td>
+              <td style="width: 20%; text-align: center">고객 주소</td>
+              <td style="width: 10%; text-align: center">전화번호</td>
+              <td style="width: 10%; text-align: center">담당자</td>
+              <td style="width: 23%; text-align: center">비고</td>
               <td style="width: 7%; text-align: center">수정</td>
             </tr>
           </table>
@@ -161,25 +161,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -193,25 +190,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -225,25 +219,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -257,25 +248,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -289,25 +277,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -321,25 +306,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -353,25 +335,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -385,25 +364,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -417,25 +393,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -449,25 +422,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -481,25 +451,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -513,25 +480,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -545,25 +509,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -577,25 +538,22 @@
                 <label><input type="checkbox" value="" /></label>
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                qqq-232
+                QQL1121
               </td>
               <td style="width: 15%; text-align: center; line-height: 30px">
-                asd-1151
+                크라페
               </td>
               <td style="width: 20%; text-align: center; line-height: 30px">
-                2021-12-10
+                부산광역시 부산진구 부전로 161
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-25
+                051-022-1515
               </td>
               <td style="width: 10%; text-align: center; line-height: 30px">
-                500
+                홍길동
               </td>
-              <td style="width: 13%; text-align: center; line-height: 30px">
-                100000000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                QEW21
+              <td style="width: 23%; text-align: center; line-height: 30px">
+                판매율 높음, 주기적 관리 필요
               </td>
               <td style="width: 7%; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
@@ -607,6 +565,6 @@
         </div>
       </div>
     </div>
-    <!-- 테이블 끝 -->
-  </body>
+  </div>
+</body>
 </html>

@@ -16,12 +16,23 @@
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
     <!-- 제이쿼리  -->
     <script src="${path}/resources/js/jquery.js"></script>
-
+<script>
+      $(document).ready(function () {
+        $(".nav_list > li").click(function () {
+          $(".nav_list > li").removeClass();
+          $(this).addClass("on");
+        });
+      });
+    </script>
 </head>
   <body>
     <div id="wrap">
+    
+    <!-- 유저 네비게이션 -->
+    <jsp:include page = "userNav.jsp" />
+   
       <!-- nav 시작 -->
-
+<%--
       <!-- nav bar -->
       <div id="nav">
         <!-- nav 상단부분 -->
@@ -35,13 +46,13 @@
           <ul class="nav_list">
             <li><a href="main ">ERP_Project</a></li>
             <li><a href="myPage ">마이페이지</a></li>
-            <li><a href="search_product ">제품관리</a></li>
+            <li><a href="product ">제품관리</a></li>
             <li style="background-color: #b9d7ea">
-              <a href="search_salesList ">영업관리</a>
+              <a href="salesList ">영업관리</a>
             </li>
-            <li><a href="search_supplier ">공급처관리</a></li>
-            <li><a href="search_clients ">고객관리</a></li>
-            <li><a href="search_orders ">발주관리</a></li>
+            <li><a href="supplier ">공급처관리</a></li>
+            <li><a href="clients ">고객관리</a></li>
+            <li><a href="orders ">발주관리</a></li>
             <li><a href="">회계</a></li>
           </ul>
         </div>
@@ -52,8 +63,9 @@
         <!-- 상단 제목 -->
         <h2>영업관리</h2>
       </div>
-    </div>
+ 
     <!-- nav 끝 -->
+--%>
 
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
@@ -154,7 +166,7 @@
           "
         >
           <table
-            boader="1"
+            border="1"
             style="width: 100%; height: auto; text-align: center"
             class="table"
           >
@@ -1161,5 +1173,6 @@
         </div>
       </div>
     </div>
+   </div>
   </body>
 </html>

@@ -59,8 +59,9 @@ $(document).ready(function(){
 </head>
 <body>
     <div id="wrap">
-      <!-- nav 시작 -->
-
+    <!-- 유저 네비게이션 -->
+    <jsp:include page = "userNav.jsp" />
+    <%--
       <!-- nav bar -->
       <div id="nav">
         <!-- nav 상단부분 -->
@@ -75,12 +76,12 @@ $(document).ready(function(){
             <li><a href="main ">ERP_Project</a></li>
             <li><a href="myPage ">마이페이지</a></li>
             <li style="background-color: #b9d7ea">
-              <a href="search_product ">제품관리</a>
+              <a href="product ">제품관리</a>
             </li>
-            <li><a href="search_salesList ">영업관리</a></li>
-            <li><a href="search_supplier ">공급처관리</a></li>
-            <li><a href="search_clients ">고객관리</a></li>
-            <li><a href="search_orders ">발주관리</a></li>
+            <li><a href="salesList ">영업관리</a></li>
+            <li><a href="supplier ">공급처관리</a></li>
+            <li><a href="clients ">고객관리</a></li>
+            <li><a href="orders ">발주관리</a></li>
             <li><a href="">회계</a></li>
           </ul>
         </div>
@@ -91,9 +92,9 @@ $(document).ready(function(){
         <!-- 상단 제목 -->
         <h2>제품관리</h2>
       </div>
-    </div>
+  
     <!-- nav 끝 -->
-
+ --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
@@ -225,5 +226,6 @@ $(document).ready(function(){
         </div>
       </div>
     </div>
+   </div>
   </body>
 </html>
