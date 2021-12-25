@@ -48,7 +48,7 @@ public class AdminController {
 		return "admin/add_employee";
 	}
 
-	// search_dept(부서검색)
+	// dept(부서	 관리)
 	@RequestMapping(value ="/dept", method = RequestMethod.GET)
 	public String dept(Model model) throws Exception {
 		
@@ -58,7 +58,7 @@ public class AdminController {
 		return "admin/dept";
 	}
 	
-	// correct_auth(권한부여)
+	// correct_auth(부서 	권한부여)
 	@RequestMapping(value ="/correct_auth", method = RequestMethod.GET)
 	public String correct_auth(Model model) throws Exception {
 		
@@ -86,7 +86,7 @@ public class AdminController {
 		return map;
 	}
 	
-	// search_employee(사원관리)
+	// employee(사원관리)
 	@RequestMapping(value ="/employee", method = RequestMethod.GET)
 	public String employee(Model model) throws Exception {
 		
