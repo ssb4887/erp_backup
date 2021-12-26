@@ -181,7 +181,22 @@ public class AdminController {
 	
 	@RequestMapping(value = "/auth_update", method = RequestMethod.POST)
 	@ResponseBody
-	public void auth_update(Department department, String dept_num) throws Exception {
+	public String auth_update(Department department) {
 
+		String result = "0";
+		
+		try {
+			
+			service.auth_updateAction(department);
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			result = "1";
+			
+		}
+		
+		
+		return result;
 	}
 }
