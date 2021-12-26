@@ -21,7 +21,7 @@
     <script>
     $(document).ready(function(){
     	
-    	$('#authSelect_btn').click(function(){
+    	$('#auth_select_btn').click(function(){
     		
     		var dept_num = $('input[name="table_dept_num"]:checked').val();
     		
@@ -176,58 +176,61 @@
     				for (var i = 0; i < items.length; i++ ) result += items[i];
     		else
     				result = items;
+    		
+    		alert(result);
     		return result;
     	}
     	
     	
     	// 권한 수정 ajax
-    	$('#authUpdate_btn').click(function(){
+    	$('#auth_update_btn').click(function(){
     		
-    		var dept_num = $('#dept_num').val();
-    		// 띄어쓰기 ..	
-    		var sales 			= getCheckBox($('input[name="sales"]:checked').val());
-    		var salesList 		= getCheckBox($('input[name="salesList"]:checked').val());
-    		var clients 			= getCheckBox($('input[name="clients"]:checked').val());
-    		var orders 			= getCheckBox($('input[name="orders"]:checked').val());
-    		var supplier 		= getCheckBox($('input[name="supplier"]:checked').val());
-    		var product 		= getCheckBox($('input[name="product"]:checked').val());
-    		var accounting 	= getCheckBox($('input[name="accounting"]:checked').val());
+    		var dept_name = $('#dept_name').val();
+    		var sales 			= 0;
+    		var salesList 		= 0;
+    		var clients 			= 0;
+    		var orders 			= 0;
+    		var supplier 		= 0;
+    		var product 		= 0;
+    		var accounting 	= 0;
 
     		
+    		$('input[name="sales"]:checked').each(function() {sales += parseInt($(this).val());});
+    		$('input[name="salesList"]:checked').each(function() {salesList += parseInt($(this).val());});
+    		$('input[name="clients"]:checked').each(function() {clients += parseInt($(this).val());});
+    		$('input[name="orders"]:checked').each(function() {orders += parseInt($(this).val());});
+    		$('input[name="supplier"]:checked').each(function() {supplier += parseInt($(this).val());});
+    		$('input[name="product"]:checked').each(function() {product += parseInt($(this).val());});
+    		$('input[name="accounting"]:checked').each(function() {accounting += parseInt($(this).val());});
+
     		$.ajax({
     				
     			type : 'POST',
-    			url : './authUpdate',
+    			url : './auth_update',
     			data : {
     				dept_num : dept_num,
     				
-    				auth_sales : sales,
-    				auth_salesList : salesList,
-    				auth_clients : clients,
-    				auth_orders : orders,
-    				auth_supplier : supplier,
-    				auth_product : product,
-    				auth_accounting : accounting
+    				auth_sales : String(sales),
+    				auth_salesList : String(salesList),
+    				auth_clients : String(clients),
+    				auth_orders : String(orders),
+    				auth_supplier : String(supplier),
+    				auth_product : String(product),
+    				auth_accounting : String(accounting)
     			},
     			dataType : 'text',
     			success : function(data) {
+    				alert(data);
     				if(data == 0) {
     				
 	    				$('#dept_name').val(' ');
-						$('#salesSearch').attr('checked', false);
-						$('#salesUpdate').attr('checked', false);
-						$('#salesListSearch').attr('checked', false);
-						$('#salesListUpdate').attr('checked', false);
-						$('#clientsSearch').attr('checked', false);
-						$('#clientsUpdate').attr('checked', false);
-						$('#ordersSearch').attr('checked', false);
-						$('#ordersUpdate').attr('checked', false);
-						$('#supplierSearch').attr('checked', false);
-						$('#supplierUpdate').attr('checked', false);
-	    				$('#productSearch').attr('checked', false);
-						$('#productUpdate').attr('checked', false);
-	    				$('#accountingSearch').attr('checked', false);
-						$('#accountingUpdate').attr('checked', false);
+	    				$('input[name="salse"]').attr('checked', false);
+	    				$('input[name="salseList"]').attr('checked', false);
+	    				$('input[name="clients"]').attr('checked', false);
+	    				$('input[name="orders"]').attr('checked', false);
+	    				$('input[name="supplier"]').attr('checked', false);
+	    				$('input[name="product"]').attr('checked', false);
+	    				$('input[name="accounting"]').attr('checked', false);
     				}
     				else{
     					alert('권한 수정에 실패했습니다.');
