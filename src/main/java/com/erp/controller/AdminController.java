@@ -23,13 +23,7 @@ public class AdminController {
 	
 	@Inject
 	AdminService service;
-	
-//	List<Department> dept_list = null;
-//	public AdminController() throws Exception {
-//		dept_list = service.getDeptList();
-//	}
-	
-	
+
 	// -- admin page
 	// adminMain(관리자 메인)
 	@RequestMapping(value ="/adminMain", method = RequestMethod.GET)
@@ -48,7 +42,7 @@ public class AdminController {
 		return "admin/add_employee";
 	}
 
-	// dept(부서	 관리)
+	// department(부서 관리)
 	@RequestMapping(value ="/department", method = RequestMethod.GET)
 	public String department(Model model) throws Exception {
 		

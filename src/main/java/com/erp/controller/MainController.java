@@ -99,8 +99,6 @@ public class MainController {
 	@RequestMapping(value = "/loginAction", method = RequestMethod.POST)
 	public String loginAction(Users users, HttpSession session, RedirectAttributes ra) throws Exception {
 		
-		
-		
 		Users result = service.loginAction(users);
 		String url = null;
 		
@@ -119,22 +117,11 @@ public class MainController {
 		}
 		
 		// user 의 dept_num에 부서코드가 있으면 로그인 후 유저 페이지르 이동
-		else if(
-				result.getDept_num().equals("SAL") 	||
-				result.getDept_num().equals("HRD") 	||
-				result.getDept_num().equals("PUR")	||
-				result.getDept_num().equals("DEF")
-				) {
+		else {
 			session.setAttribute("user", users);
 			url = "redirect:/clients";
 		}
 		
-		// 그 외 로그인 알림 창 후 다시 로그인 창으로 이동
-		else {
-			ra.addFlashAttribute("msg", "로그인 정보가 일치하지 않습니다. ");
-			url = "redirect:/";
-			
-		}
 		return url;
 	}
 	
@@ -149,15 +136,3 @@ public class MainController {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

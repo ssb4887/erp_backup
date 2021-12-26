@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
     <!-- 제이쿼리  -->
     <script src="${path}/resources/js/jquery.js"></script>
-<script>
+	<script>
       $(document).ready(function () {
         $("#nav .nav_list > li ").click(function () {
           $("#nav .nav_list > li").removeClass();
           $(this).addClass("on");
         });
       });
-    </script>
+      </script>
 </head>
 
   <body>
