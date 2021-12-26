@@ -49,13 +49,13 @@ public class AdminController {
 	}
 
 	// dept(부서	 관리)
-	@RequestMapping(value ="/dept", method = RequestMethod.GET)
-	public String dept(Model model) throws Exception {
+	@RequestMapping(value ="/department", method = RequestMethod.GET)
+	public String department(Model model) throws Exception {
 		
 		List<Department> dept_list = service.getDeptList();
 		model.addAttribute("dept_list", dept_list);
 		
-		return "admin/dept";
+		return "admin/department";
 	}
 	
 	// correct_auth(부서 	권한부여)
