@@ -39,7 +39,7 @@
 				<li><a href="adminMain">ERP_Project</a></li>
 				<li><a href="employee">사원관리</a></li>
 				<li><a href="add_employee">사원등록</a></li>
-				<li><a href="dept">부서관리</a></li>
+				<li><a href="department">부서관리</a></li>
 				<li><a href="correct_auth">부서권한관리</a></li>
 			</ul>
 		</div>
