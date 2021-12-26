@@ -29,4 +29,6 @@ public interface AdminService {
 	public List<Department> searchDeptAction(String dept_name) throws Exception;
 	
 	public List<Department> searchAuthTable(Department department) throws Exception;
+	
+	public void auth_updateAction(Department department) throws Exception;
 }

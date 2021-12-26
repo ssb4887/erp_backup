@@ -43,4 +43,7 @@ public interface AdminDAO {
 	// 부서 권한 검색
 	public List<Department> searchAuthTable(Department department) throws Exception;
 	
+	// 부서 권한 수정
+	public void auth_update(String dept_num) throws Exception;
+	
 }

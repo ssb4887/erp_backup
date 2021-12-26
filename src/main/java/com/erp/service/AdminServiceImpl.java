@@ -88,6 +88,12 @@ public class AdminServiceImpl implements AdminService {
 		return dao.searchAuthTable(department);
 	}
 
+	@Override
+	public void auth_updateAction(Department department) throws Exception {
+		// 권한 수정 기능
+		dao.updateDept(department);
+	}
+
 
 	
 }
