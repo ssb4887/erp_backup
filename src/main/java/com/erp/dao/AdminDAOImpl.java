@@ -85,8 +85,8 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public void auth_update(String dept_num) throws Exception {
-		sqlSession.update(SESSION + ".auth_update", dept_num);
+	public void auth_update(Department department) throws Exception {
+		sqlSession.update(SESSION + ".auth_update", department);
 	}
 	
 

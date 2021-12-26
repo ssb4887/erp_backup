@@ -21,7 +21,7 @@
     <script>
     $(document).ready(function(){
     	
-    	$('#auth_select_btn').click(function(){
+    	$('#authSelect_btn').click(function(){
     		
     		var dept_num = $('input[name="table_dept_num"]:checked').val();
     		
@@ -34,133 +34,134 @@
     			dataType : 'JSON',
     			success : function(data) {
     				$('#dept_name').val(data.dept_name);
+    				$('#dept_num').val(data.dept_num);
     				$('#dept_name').attr('readonly', true);
     				// 권한 -- 0 : 접근불가, 1 : 검색만 가능, 2 : 수정만 가능, 3 : 검색 수정 가능
     				
     				// 영업 권한
     				if(data.auth_sales == 3) {
-    					$('#sales_search').attr('checked', true);
-    					$('#sales_update').attr('checked', true);
+    					$('#salesSearch').attr('checked', true);
+    					$('#salesUpdate').attr('checked', true);
     				}
     				else if(data.auth_sales == 2) {
-    					$('#sales_search').attr('checked', false);
-    					$('#sales_update').attr('checked', true);
+    					$('#salesSearch').attr('checked', false);
+    					$('#salesUpdate').attr('checked', true);
     				}
     				else if(data.auth_sales == 1) {
-    					$('#sales_search').attr('checked', true);
-    					$('#sales_update').attr('checked', false);
+    					$('#salesSearch').attr('checked', true);
+    					$('#salesUpdate').attr('checked', false);
     				}
     				else {
-    					$('#sales_search').attr('checked', false);
-    					$('#sales_update').attr('checked', false);
+    					$('#salesSearch').attr('checked', false);
+    					$('#salesUpdate').attr('checked', false);
     				}
     				
     				// 영업 내역 권한
     				if(data.auth_salesList == 3) {
-    					$('#salesList_search').attr('checked', true);
-    					$('#salesList_update').attr('checked', true);
+    					$('#salesListSearch').attr('checked', true);
+    					$('#salesListUpdate').attr('checked', true);
     				}
     				else if(data.auth_salesList == 2) {
-    					$('#salesList_search').attr('checked', false);
-    					$('#salesList_update').attr('checked', true);
+    					$('#salesListSearch').attr('checked', false);
+    					$('#salesListUpdate').attr('checked', true);
     				}
     				else if(data.auth_salesList == 1) {
-    					$('#salesList_search').attr('checked', true);
-    					$('#salesList_update').attr('checked', false);
+    					$('#salesListSearch').attr('checked', true);
+    					$('#salesListUpdate').attr('checked', false);
     				}
     				else {
-    					$('#salesList_search').attr('checked', false);
-    					$('#salesList_update').attr('checked', false);
+    					$('#salesListSearch').attr('checked', false);
+    					$('#salesListUpdate').attr('checked', false);
     				}
     				
     				// 고객 권한
     				if(data.auth_clients == 3) {
-    					$('#clients_search').attr('checked', true);
-    					$('#clients_update').attr('checked', true);
+    					$('#clientsSearch').attr('checked', true);
+    					$('#clientsUpdate').attr('checked', true);
     				}
     				else if(data.auth_clients == 2) {
-    					$('#clients_search').attr('checked', false);
-    					$('#clients_update').attr('checked', true);
+    					$('#clientsSearch').attr('checked', false);
+    					$('#clientsUpdate').attr('checked', true);
     				}
     				else if(data.auth_clients == 1) {
-    					$('#clients_search').attr('checked', true);
-    					$('#clients_update').attr('checked', false);
+    					$('#clientsSearch').attr('checked', true);
+    					$('#clientsUpdate').attr('checked', false);
     				}
     				else {
-    					$('#clients_search').attr('checked', false);
-    					$('#clients_update').attr('checked', false);
+    					$('#clientsSearch').attr('checked', false);
+    					$('#clientsUpdate').attr('checked', false);
     				}
     				
     				// 주문 권한
     				if(data.auth_orders == 3) {
-    					$('#orders_search').attr('checked', true);
-    					$('#orders_update').attr('checked', true);
+    					$('#ordersSearch').attr('checked', true);
+    					$('#ordersUpdate').attr('checked', true);
     				}
     				else if(data.auth_orders == 2) {
-    					$('#orders_search').attr('checked', false);
-    					$('#orders_update').attr('checked', true);
+    					$('#ordersSearch').attr('checked', false);
+    					$('#ordersUpdate').attr('checked', true);
     				}
     				else if(data.auth_orders == 1) {
-    					$('#orders_search').attr('checked', true);
-    					$('#orders_update').attr('checked', false);
+    					$('#ordersSearch').attr('checked', true);
+    					$('#ordersUpdate').attr('checked', false);
     				}
     				else {
-    					$('#orders_search').attr('checked', false);
-    					$('#orders_update').attr('checked', false);
+    					$('#ordersSearch').attr('checked', false);
+    					$('#ordersUpdate').attr('checked', false);
     				}
     				
     				// 공급처 권한
     				if(data.auth_supplier == 3) {
-    					$('#supplier_search').attr('checked', true);
-    					$('#supplier_update').attr('checked', true);
+    					$('#supplierSearch').attr('checked', true);
+    					$('#supplierUpdate').attr('checked', true);
     				}
     				else if(data.auth_supplier == 2) {
-    					$('#supplier_search').attr('checked', false);
-    					$('#supplier_update').attr('checked', true);
+    					$('#supplierSearch').attr('checked', false);
+    					$('#supplierUpdate').attr('checked', true);
     				}
     				else if(data.auth_supplier == 1) {
-    					$('#supplier_search').attr('checked', true);
-    					$('#supplier_update').attr('checked', false);
+    					$('#supplierSearch').attr('checked', true);
+    					$('#supplierUpdate').attr('checked', false);
     				}
     				else {
-    					$('#supplier_search').attr('checked', false);
-    					$('#supplier_update').attr('checked', false);
+    					$('#supplierSearch').attr('checked', false);
+    					$('#supplierUpdate').attr('checked', false);
     				}
     				
     				// 제품 권한
     				if(data.auth_product == 3) {
-    					$('#product_search').attr('checked', true);
-    					$('#product_update').attr('checked', true);
+    					$('#productSearch').attr('checked', true);
+    					$('#productUpdate').attr('checked', true);
     				}
     				else if(data.auth_product == 2) {
-    					$('#product_search').attr('checked', false);
-    					$('#product_update').attr('checked', true);
+    					$('#productSearch').attr('checked', false);
+    					$('#productUpdate').attr('checked', true);
     				}
     				else if(data.auth_product == 1) {
-    					$('#product_search').attr('checked', true);
-    					$('#product_update').attr('checked', false);
+    					$('#productSearch').attr('checked', true);
+    					$('#productUpdate').attr('checked', false);
     				}
     				else {
-    					$('#product_search').attr('checked', false);
-    					$('#product_update').attr('checked', false);
+    					$('#productSearch').attr('checked', false);
+    					$('#productUpdate').attr('checked', false);
     				}
     				
     				// 회계 권한
     				if(data.auth_accounting == 3) {
-    					$('#accounting_search').attr('checked', true);
-    					$('#accounting_update').attr('checked', true);
+    					$('#accountingSearch').attr('checked', true);
+    					$('#accountingUpdate').attr('checked', true);
     				}
     				else if(data.auth_accounting == 2) {
-    					$('#accounting_search').attr('checked', false);
-    					$('#accounting_update').attr('checked', true);
+    					$('#accountingSearch').attr('checked', false);
+    					$('#accountingUpdate').attr('checked', true);
     				}
     				else if(data.auth_accounting == 1) {
-    					$('#accounting_search').attr('checked', true);
-    					$('#accounting_update').attr('checked', false);
+    					$('#accountingSearch').attr('checked', true);
+    					$('#accountingUpdate').attr('checked', false);
     				}
     				else {
-    					$('#accounting_search').attr('checked', false);
-    					$('#accounting_update').attr('checked', false);
+    					$('#accountingSearch').attr('checked', false);
+    					$('#accountingUpdate').attr('checked', false);
     				}
     				
     			}
@@ -168,40 +169,71 @@
     			
     		});
     	});
+    	// 배열로 체크박스들의 값들을 받아오는 작업
+    	function getCheckBox(items) {
+    		var result = 0;
+    		if(typeof(items) == 'object')
+    				for (var i = 0; i < items.length; i++ ) result += items[i];
+    		else
+    				result = items;
+    		return result;
+    	}
+    	
     	
     	// 권한 수정 ajax
-    	$('#auth_update_btn').click(function(){
+    	$('#authUpdate_btn').click(function(){
     		
-    		dept_name = $('#dept_name').val();
+    		var dept_num = $('#dept_num').val();
+    		// 띄어쓰기 ..	
+    		var sales 			= getCheckBox($('input[name="sales"]:checked').val());
+    		var salesList 		= getCheckBox($('input[name="salesList"]:checked').val());
+    		var clients 			= getCheckBox($('input[name="clients"]:checked').val());
+    		var orders 			= getCheckBox($('input[name="orders"]:checked').val());
+    		var supplier 		= getCheckBox($('input[name="supplier"]:checked').val());
+    		var product 		= getCheckBox($('input[name="product"]:checked').val());
+    		var accounting 	= getCheckBox($('input[name="accounting"]:checked').val());
+
     		
     		$.ajax({
     				
     			type : 'POST',
-    			url : './auth_update',
+    			url : './authUpdate',
     			data : {
-    				dept_name : dept_name
+    				dept_num : dept_num,
+    				
+    				auth_sales : sales,
+    				auth_salesList : salesList,
+    				auth_clients : clients,
+    				auth_orders : orders,
+    				auth_supplier : supplier,
+    				auth_product : product,
+    				auth_accounting : accounting
     			},
-    			dataType : 'JSON',
+    			dataType : 'text',
     			success : function(data) {
-    				dept_name.val(' ');
-					$('#sales_search').attr('checked', false);
-					$('#sales_update').attr('checked', false);
-					$('#salesList_search').attr('checked', false);
-					$('#salesList_update').attr('checked', false);
-					$('#clients_search').attr('checked', false);
-					$('#clients_update').attr('checked', false);
-					$('#orders_search').attr('checked', false);
-					$('#orders_update').attr('checked', false);
-					$('#supplier_search').attr('checked', false);
-					$('#supplier_update').attr('checked', false);
-    				$('#product_search').attr('checked', false);
-					$('#product_update').attr('checked', false);
-    				$('#accounting_search').attr('checked', false);
-					$('#accounting_update').attr('checked', false);
+    				if(data == 0) {
+    				
+	    				$('#dept_name').val(' ');
+						$('#salesSearch').attr('checked', false);
+						$('#salesUpdate').attr('checked', false);
+						$('#salesListSearch').attr('checked', false);
+						$('#salesListUpdate').attr('checked', false);
+						$('#clientsSearch').attr('checked', false);
+						$('#clientsUpdate').attr('checked', false);
+						$('#ordersSearch').attr('checked', false);
+						$('#ordersUpdate').attr('checked', false);
+						$('#supplierSearch').attr('checked', false);
+						$('#supplierUpdate').attr('checked', false);
+	    				$('#productSearch').attr('checked', false);
+						$('#productUpdate').attr('checked', false);
+	    				$('#accountingSearch').attr('checked', false);
+						$('#accountingUpdate').attr('checked', false);
+    				}
+    				else{
+    					alert('권한 수정에 실패했습니다.');
+    				}
     				
     			}
-    			
-    		
     		
     		});
     	});
@@ -306,6 +338,7 @@
 								
 								<div class="form-group col-sm-8 col-md-8 col-lg-8">
 									<input type="text" class="form-control" name = "dept_name" id = "dept_name" readonly>
+									<input type="hidden" class="form-control" name = "dept_num" id = "dept_num" readonly>
 								</div	>
 								
 								
@@ -330,10 +363,10 @@
 													영업
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "sales" id = "sales_search" value ="1">
+													<input type = "checkbox" name = "sales" id = "salesSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "sales"  id = "sales_update" value ="2">
+													<input type = "checkbox" name = "sales"  id = "salesUpdate" value ="2">
 												</td>
 											</tr>
 											
@@ -342,10 +375,10 @@
 													영업 내역
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "salesList" id = "salesList_search" value ="1">
+													<input type = "checkbox" name = "salesList" id = "salesListSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "salesList" id = "salesList_update" value ="2">
+													<input type = "checkbox" name = "salesList" id = "salesListUpdate" value ="2">
 												</td>
 											</tr>
 											
@@ -354,10 +387,10 @@
 													고객
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "clients" id = "clients_search" value ="1">
+													<input type = "checkbox" name = "clients" id = "clientsSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "clients" id = "clients_update" value ="2">
+													<input type = "checkbox" name = "clients" id = "clientsUpdate" value ="2">
 												</td>
 											</tr>
 											
@@ -366,10 +399,10 @@
 													주문
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "orders" id = "orders_search" value ="1">
+													<input type = "checkbox" name = "orders" id = "ordersSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "orders" id = "orders_update" value ="2">
+													<input type = "checkbox" name = "orders" id = "ordersUpdate" value ="2">
 												</td>
 											</tr>
 											
@@ -378,10 +411,10 @@
 													공급처
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "supplier" id = "supplier_search" value ="1">
+													<input type = "checkbox" name = "supplier" id = "supplierSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "supplier" id = "supplier_update" value ="2">
+													<input type = "checkbox" name = "supplier" id = "supplierUpdate" value ="2">
 												</td>
 											</tr>
 											
@@ -390,10 +423,10 @@
 													제품
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "product" id = "product_search" value ="1">
+													<input type = "checkbox" name = "product" id = "productSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "product" id = "product_update" value ="2">
+													<input type = "checkbox" name = "product" id = "productUpdate" value ="2">
 												</td>
 											</tr>
 											
@@ -403,10 +436,10 @@
 													회계
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "accounting" id = "accounting_search" value ="1">
+													<input type = "checkbox" name = "accounting" id = "accountingSearch" value ="1">
 												</td>
 												<td style="width: 30%; text-align: center">
-													<input type = "checkbox" name = "accounting" id = "accounting_update" value ="2">
+													<input type = "checkbox" name = "accounting" id = "accountingUpdate" value ="2">
 												</td>
 											</tr>
 											
