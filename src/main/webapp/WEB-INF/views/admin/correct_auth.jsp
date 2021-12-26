@@ -181,67 +181,58 @@
     		return result;
     	}
     	
-    	
-    	// 권한 수정 ajax
-    	$('#auth_update_btn').click(function(){
-    		
-    		var dept_name = $('#dept_name').val();
-    		var sales 			= 0;
-    		var salesList 		= 0;
-    		var clients 			= 0;
-    		var orders 			= 0;
-    		var supplier 		= 0;
-    		var product 		= 0;
-    		var accounting 	= 0;
+    function auth_update() {
+    	var dept_num = $('#dept_num').val();
+		var sales 			= 0;
+		var salesList 		= 0;
+		var clients 			= 0;
+		var orders 			= 0;
+		var supplier 		= 0;
+		var product 		= 0;
+		var accounting 	= 0;
+		
+		$('input[name="sales"]:checked').each(function() {sales += parseInt($(this).val());});
+		$('input[name="salesList"]:checked').each(function() {salesList += parseInt($(this).val());});
+		$('input[name="clients"]:checked').each(function() {clients += parseInt($(this).val());});
+		$('input[name="orders"]:checked').each(function() {orders += parseInt($(this).val());});
+		$('input[name="supplier"]:checked').each(function() {supplier += parseInt($(this).val());});
+		$('input[name="product"]:checked').each(function() {product += parseInt($(this).val());});
+		$('input[name="accounting"]:checked').each(function() {accounting += parseInt($(this).val());});
 
-    		
-    		$('input[name="sales"]:checked').each(function() {sales += parseInt($(this).val());});
-    		$('input[name="salesList"]:checked').each(function() {salesList += parseInt($(this).val());});
-    		$('input[name="clients"]:checked').each(function() {clients += parseInt($(this).val());});
-    		$('input[name="orders"]:checked').each(function() {orders += parseInt($(this).val());});
-    		$('input[name="supplier"]:checked').each(function() {supplier += parseInt($(this).val());});
-    		$('input[name="product"]:checked').each(function() {product += parseInt($(this).val());});
-    		$('input[name="accounting"]:checked').each(function() {accounting += parseInt($(this).val());});
 
-    		$.ajax({
-    				
-    			type : 'POST',
-    			url : './auth_update',
-    			data : {
-    				dept_num : dept_num,
-    				
-    				auth_sales : String(sales),
-    				auth_salesList : String(salesList),
-    				auth_clients : String(clients),
-    				auth_orders : String(orders),
-    				auth_supplier : String(supplier),
-    				auth_product : String(product),
-    				auth_accounting : String(accounting)
-    			},
-    			dataType : 'text',
-    			success : function(data) {
-    				alert(data);
-    				if(data == 0) {
-    				
-	    				$('#dept_name').val(' ');
-	    				$('input[name="salse"]').attr('checked', false);
-	    				$('input[name="salseList"]').attr('checked', false);
-	    				$('input[name="clients"]').attr('checked', false);
-	    				$('input[name="orders"]').attr('checked', false);
-	    				$('input[name="supplier"]').attr('checked', false);
-	    				$('input[name="product"]').attr('checked', false);
-	    				$('input[name="accounting"]').attr('checked', false);
-    				}
-    				else{
-    					alert('권한 수정에 실패했습니다.');
-    				}
-    				
-    			}
-    		
-    		});
-    	});
-    	// update end
-    });
+		$.ajax({
+			type : 'POST',
+			url : './auth_update',
+			data : {
+				dept_num : dept_num,
+				auth_sales : String(sales),
+				auth_salesList : String(salesList),
+				auth_clients : String(clients),
+				auth_orders : String(orders),
+				auth_supplier : String(supplier),
+				auth_product : String(product),
+				auth_accounting : String(accounting)
+			},
+			dataType : 'text',
+			success : function(data) {
+				if(data == 0) {
+    				$('#dept_name').val('');
+    	    		$('input[name="sales"]').each(function() { $(this).attr('checked',false);});
+    	    		$('input[name="salesList"]').each(function() {$(this).attr('checked',false);});
+    	    		$('input[name="clients"]').each(function() {$(this).attr('checked',false);});
+    	    		$('input[name="orders"]').each(function() {$(this).attr('checked',false);});
+    	    		$('input[name="supplier"]').each(function() {$(this).attr('checked',false);});
+    	    		$('input[name="product"]').each(function() {$(this).attr('checked',false);});
+    	    		$('input[name="accounting"]').each(function() {$(this).attr('checked',false);});
+				}
+				else{
+					alert('권한 수정에 실패했습니다.');
+				}
+			}
+		});
+
+    // ajax
+    }
     </script>
     
   </head>
@@ -454,7 +445,7 @@
 							<!-- 등록, 수정 버튼 -->
 							<div class="row" style="margin-top: 20%">
 								<div class="form-group col-sm-12 col-md-12 col-lg-12">
-									<button type="button" class="btn btn-info form-control" id = "auth_update_btn" style="background-color: #769fcd; border: 1px solid #769fcd">등록</button>
+									<button type="button" class="btn btn-info form-control" id = "auth_update_btn" style="background-color: #769fcd; border: 1px solid #769fcd" onclick="auth_update()">등록</button>
 								</div>
 							</div>
 							
