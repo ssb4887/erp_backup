@@ -20,7 +20,41 @@
     <script src="${path}/resources/js/jquery.js"></script>
     <script>
     $(document).ready(function(){
-    	
+	
+		// 검색을 했을 때 ajax
+		$('#searchDeptBtn').click(function(){
+			
+			var dept_name = $('#search_dept_name').val();
+	
+					$.ajax({
+						type : 'POST',
+						url : './searchDeptAction',
+						data : {
+							dept_name : dept_name
+						},
+						dataType : "JSON",
+						success : function(data) {
+							$('#deptListTable').empty();
+							var str = '';
+							str += '<table style="width: 100%; height: auto; text-align: center; overflow: scroll-y;"class="table table-hover">';
+							for(var i = 0; i < data.length; i++) {
+								str += '<tr>';
+									str += '<td style="width: 20%; text-align: center">';
+									str += '<input type ="radio" name = "table_dept_num" value = "' + data[i].dept_num + '" /></td>';
+									str += '<input type = "hidden" id = "' + data[i].dept_num + '" value="' + data[i].dept_name + '"/></td>';
+									str += '<td style="width: 30%; text-align: center">' + data[i].dept_name +'</td>';
+									str += '<td style="width: 20%; text-align: center">' + data[i].dept_num +'</td>';
+									str += '<td style="width: 30%; text-align: center">' + data[i].dept_tel +'</td>';
+								str += '</tr>';
+							}
+							str += '</table>';
+		 					$('#deptListTable').append(str); 
+							
+						}
+					});
+				
+			});
+		// 선택 부서의 권한 값 불러 오기
     	$('#auth_select_btn').click(function(){
     		
     		var dept_num = $('input[name="table_dept_num"]:checked').val();
@@ -35,133 +69,133 @@
     			success : function(data) {
     				$('#dept_name').val(data.dept_name);
     				$('#dept_num').val(data.dept_num);
-    				$('#dept_name').attr('readonly', true);
+    				$('#dept_name').prop('readonly', true);
     				// 권한 -- 0 : 접근불가, 1 : 검색만 가능, 2 : 수정만 가능, 3 : 검색 수정 가능
     				
     				// 영업 권한
     				if(data.auth_sales == 3) {
-    					$('#salesSearch').attr('checked', true);
-    					$('#salesUpdate').attr('checked', true);
+    					$('#salesSearch').prop('checked', true);
+    					$('#salesUpdate').prop('checked', true);
     				}
     				else if(data.auth_sales == 2) {
-    					$('#salesSearch').attr('checked', false);
-    					$('#salesUpdate').attr('checked', true);
+    					$('#salesSearch').prop('checked', false);
+    					$('#salesUpdate').prop('checked', true);
     				}
     				else if(data.auth_sales == 1) {
-    					$('#salesSearch').attr('checked', true);
-    					$('#salesUpdate').attr('checked', false);
+    					$('#salesSearch').prop('checked', true);
+    					$('#salesUpdate').prop('checked', false);
     				}
     				else {
-    					$('#salesSearch').attr('checked', false);
-    					$('#salesUpdate').attr('checked', false);
+    					$('#salesSearch').prop('checked', false);
+    					$('#salesUpdate').prop('checked', false);
     				}
     				
     				// 영업 내역 권한
     				if(data.auth_salesList == 3) {
-    					$('#salesListSearch').attr('checked', true);
-    					$('#salesListUpdate').attr('checked', true);
+    					$('#salesListSearch').prop('checked', true);
+    					$('#salesListUpdate').prop('checked', true);
     				}
     				else if(data.auth_salesList == 2) {
-    					$('#salesListSearch').attr('checked', false);
-    					$('#salesListUpdate').attr('checked', true);
+    					$('#salesListSearch').prop('checked', false);
+    					$('#salesListUpdate').prop('checked', true);
     				}
     				else if(data.auth_salesList == 1) {
-    					$('#salesListSearch').attr('checked', true);
-    					$('#salesListUpdate').attr('checked', false);
+    					$('#salesListSearch').prop('checked', true);
+    					$('#salesListUpdate').prop('checked', false);
     				}
     				else {
-    					$('#salesListSearch').attr('checked', false);
-    					$('#salesListUpdate').attr('checked', false);
+    					$('#salesListSearch').prop('checked', false);
+    					$('#salesListUpdate').prop('checked', false);
     				}
     				
     				// 고객 권한
     				if(data.auth_clients == 3) {
-    					$('#clientsSearch').attr('checked', true);
-    					$('#clientsUpdate').attr('checked', true);
+    					$('#clientsSearch').prop('checked', true);
+    					$('#clientsUpdate').prop('checked', true);
     				}
     				else if(data.auth_clients == 2) {
-    					$('#clientsSearch').attr('checked', false);
-    					$('#clientsUpdate').attr('checked', true);
+    					$('#clientsSearch').prop('checked', false);
+    					$('#clientsUpdate').prop('checked', true);
     				}
     				else if(data.auth_clients == 1) {
-    					$('#clientsSearch').attr('checked', true);
-    					$('#clientsUpdate').attr('checked', false);
+    					$('#clientsSearch').prop('checked', true);
+    					$('#clientsUpdate').prop('checked', false);
     				}
     				else {
-    					$('#clientsSearch').attr('checked', false);
-    					$('#clientsUpdate').attr('checked', false);
+    					$('#clientsSearch').prop('checked', false);
+    					$('#clientsUpdate').prop('checked', false);
     				}
     				
     				// 주문 권한
     				if(data.auth_orders == 3) {
-    					$('#ordersSearch').attr('checked', true);
-    					$('#ordersUpdate').attr('checked', true);
+    					$('#ordersSearch').prop('checked', true);
+    					$('#ordersUpdate').prop('checked', true);
     				}
     				else if(data.auth_orders == 2) {
-    					$('#ordersSearch').attr('checked', false);
-    					$('#ordersUpdate').attr('checked', true);
+    					$('#ordersSearch').prop('checked', false);
+    					$('#ordersUpdate').prop('checked', true);
     				}
     				else if(data.auth_orders == 1) {
-    					$('#ordersSearch').attr('checked', true);
-    					$('#ordersUpdate').attr('checked', false);
+    					$('#ordersSearch').prop('checked', true);
+    					$('#ordersUpdate').prop('checked', false);
     				}
     				else {
-    					$('#ordersSearch').attr('checked', false);
-    					$('#ordersUpdate').attr('checked', false);
+    					$('#ordersSearch').prop('checked', false);
+    					$('#ordersUpdate').prop('checked', false);
     				}
     				
     				// 공급처 권한
     				if(data.auth_supplier == 3) {
-    					$('#supplierSearch').attr('checked', true);
-    					$('#supplierUpdate').attr('checked', true);
+    					$('#supplierSearch').prop('checked', true);
+    					$('#supplierUpdate').prop('checked', true);
     				}
     				else if(data.auth_supplier == 2) {
-    					$('#supplierSearch').attr('checked', false);
-    					$('#supplierUpdate').attr('checked', true);
+    					$('#supplierSearch').prop('checked', false);
+    					$('#supplierUpdate').prop('checked', true);
     				}
     				else if(data.auth_supplier == 1) {
-    					$('#supplierSearch').attr('checked', true);
-    					$('#supplierUpdate').attr('checked', false);
+    					$('#supplierSearch').prop('checked', true);
+    					$('#supplierUpdate').prop('checked', false);
     				}
     				else {
-    					$('#supplierSearch').attr('checked', false);
-    					$('#supplierUpdate').attr('checked', false);
+    					$('#supplierSearch').prop('checked', false);
+    					$('#supplierUpdate').prop('checked', false);
     				}
     				
     				// 제품 권한
     				if(data.auth_product == 3) {
-    					$('#productSearch').attr('checked', true);
-    					$('#productUpdate').attr('checked', true);
+    					$('#productSearch').prop('checked', true);
+    					$('#productUpdate').prop('checked', true);
     				}
     				else if(data.auth_product == 2) {
-    					$('#productSearch').attr('checked', false);
-    					$('#productUpdate').attr('checked', true);
+    					$('#productSearch').prop('checked', false);
+    					$('#productUpdate').prop('checked', true);
     				}
     				else if(data.auth_product == 1) {
-    					$('#productSearch').attr('checked', true);
-    					$('#productUpdate').attr('checked', false);
+    					$('#productSearch').prop('checked', true);
+    					$('#productUpdate').prop('checked', false);
     				}
     				else {
-    					$('#productSearch').attr('checked', false);
-    					$('#productUpdate').attr('checked', false);
+    					$('#productSearch').prop('checked', false);
+    					$('#productUpdate').prop('checked', false);
     				}
     				
     				// 회계 권한
     				if(data.auth_accounting == 3) {
-    					$('#accountingSearch').attr('checked', true);
-    					$('#accountingUpdate').attr('checked', true);
+    					$('#accountingSearch').prop('checked', true);
+    					$('#accountingUpdate').prop('checked', true);
     				}
     				else if(data.auth_accounting == 2) {
-    					$('#accountingSearch').attr('checked', false);
-    					$('#accountingUpdate').attr('checked', true);
+    					$('#accountingSearch').prop('checked', false);
+    					$('#accountingUpdate').prop('checked', true);
     				}
     				else if(data.auth_accounting == 1) {
-    					$('#accountingSearch').attr('checked', true);
-    					$('#accountingUpdate').attr('checked', false);
+    					$('#accountingSearch').prop('checked', true);
+    					$('#accountingUpdate').prop('checked', false);
     				}
     				else {
-    					$('#accountingSearch').attr('checked', false);
-    					$('#accountingUpdate').attr('checked', false);
+    					$('#accountingSearch').prop('checked', false);
+    					$('#accountingUpdate').prop('checked', false);
     				}
     				
     			}
@@ -169,20 +203,14 @@
     			
     		});
     	});
-    	// 배열로 체크박스들의 값들을 받아오는 작업
-    	function getCheckBox(items) {
-    		var result = 0;
-    		if(typeof(items) == 'object')
-    				for (var i = 0; i < items.length; i++ ) result += items[i];
-    		else
-    				result = items;
-    		
-    		alert(result);
-    		return result;
-    	}
-    	
+    });
+    
+    // 권한 수정 함수(onclick)
     function auth_update() {
-    	var dept_num = $('#dept_num').val();
+    	
+    	var dept_num = $('input[name="table_dept_num"]:checked').val(); // radio 버튼을 눌렀을때 체크에 해당하는 name값을 가져온다.	
+		var dept_id = '#' + dept_num;
+		var dept_name = $(dept_id).val();
 		var sales 			= 0;
 		var salesList 		= 0;
 		var clients 			= 0;
@@ -217,20 +245,20 @@
 			success : function(data) {
 				if(data == 0) {
     				$('#dept_name').val('');
-    	    		$('input[name="sales"]').each(function() { $(this).attr('checked',false);});
-    	    		$('input[name="salesList"]').each(function() {$(this).attr('checked',false);});
-    	    		$('input[name="clients"]').each(function() {$(this).attr('checked',false);});
-    	    		$('input[name="orders"]').each(function() {$(this).attr('checked',false);});
-    	    		$('input[name="supplier"]').each(function() {$(this).attr('checked',false);});
-    	    		$('input[name="product"]').each(function() {$(this).attr('checked',false);});
-    	    		$('input[name="accounting"]').each(function() {$(this).attr('checked',false);});
+    	    		$('input[name="sales"]').each(function() {$(this).prop('checked',false);});
+    	    		$('input[name="salesList"]').each(function() {$(this).prop('checked',false);});
+    	    		$('input[name="clients"]').each(function() {$(this).prop('checked',false);});
+    	    		$('input[name="orders"]').each(function() {$(this).prop('checked',false);});
+    	    		$('input[name="supplier"]').each(function() {$(this).prop('checked',false);});
+    	    		$('input[name="product"]').each(function() {$(this).prop('checked',false);});
+    	    		$('input[name="accounting"]').each(function() {$(this).prop('checked',false);});
+    	    		alert('권한 수정 성공');
 				}
 				else{
 					alert('권한 수정에 실패했습니다.');
 				}
 			}
 		});
-
     // ajax
     }
     </script>

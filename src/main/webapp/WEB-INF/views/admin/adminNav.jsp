@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>ERP Project</title>
+<script>
+$(document).ready(function () {
+  $("#nav .nav_list > li ").click(function () {
+    $("#nav .nav_list > li").removeClass();
+    $(this).addClass("on");
+  });
+});
+</script>
 </head>
 <body>
 	<!-- nav bar -->

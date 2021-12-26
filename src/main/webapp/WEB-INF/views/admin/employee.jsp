@@ -37,7 +37,6 @@ $(document).ready(function(){
 					var str = '';
 					str += '<table style="width: 100%; height: auto; text-align: center" class="table table-hover">';	
 					for(var i = 0; i < data.length; i++) {
-						
 						str += '<tr>';
 							str += 	'<td style="width: 10%; text-align: center">'+ data[i].user_num +'</td>';
 							str += 	'<td style="width: 10%; text-align: center">********</td>';
@@ -47,7 +46,6 @@ $(document).ready(function(){
 							str += 	'<td style="width: 15%; text-align: center">'+ data[i].user_email +'</td>';
 							str += 	'<td style="width: 30%; text-align: center">'+ data[i].user_add +'</td>';
 						str += '</tr>';
-						
 					}
 					str += '</table>';
 					$('#usersListTable').append(str); 
@@ -66,39 +64,7 @@ $(document).ready(function(){
 <div id="wrap">
    	<!-- 유저 네비게이션 -->
     <jsp:include page = "adminNav.jsp" />
-    <%--
-      <!-- nav 시작 -->
 
-      <!-- nav bar -->
-      <div id="nav">
-        <!-- nav 상단부분 -->
-        <div class="nav_top">
-          <div class="profile"></div>
-          <span>admin</span>
-        </div>
-
-        <!-- nav 하단부분 -->
-        <div class="nav_bottom">
-          <ul class="nav_list">
-			<li><a href="adminMain">ERP_Project</a></li>
-			<li style="background-color: #b9d7ea; font-weight: bold; color: #fff; font-size: 20px">사원관리</li>
-			<li><a href="add_employee">사원등록</a></li>
-			<li><a href="search_dept">부서관리</a></li>
-			<li><a href="correct_auth">부서권한관리</a></li>
-			
-          
-          </ul>
-        </div>
-      </div>
-
-      <!-- 상단 bar -->
-      <div id="topBar">
-        <!-- 상단 제목 -->
-        <h2>부서등록</h2>
-      </div>
-    
-    <!-- nav 끝 -->
- --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
