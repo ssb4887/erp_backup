@@ -87,11 +87,25 @@
 			FROM PRODUCT
 		</select>
 		
-			<!-- 제품  검색 기능 -->
+		<!-- 제품  검색 기능 -->
 		<select id="searchProduct" resultType= "Product">
 			SELECT *
 			FROM PRODUCT
 			WHERE pro_name LIKE #{pro_name}
 		</select>
+		
+		<!-- 부서 권한 수정 -->
+		<update id = "auth_update">
+			UPDATE DEPARTMENT 
+			SET
+				auth_sales 			= #{auth_sales}, 
+				auth_salesList 		= #{auth_salesList}, 
+				auth_clients 			=  #{auth_clients}, 
+				auth_orders 			=  #{auth_orders}, 
+				auth_supplier 		=  #{auth_supplier}, 
+				auth_product 		=  #{auth_product}, 
+				auth_accounting 	=  #{auth_accounting}
+			WHERE dept_num =  #{dept_name};
+		</update>
 		
 </mapper>

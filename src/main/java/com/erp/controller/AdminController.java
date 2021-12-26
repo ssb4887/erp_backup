@@ -177,4 +177,11 @@ public class AdminController {
 		
 		return dept_list;
 	}
+	
+	
+	@RequestMapping(value = "/auth_update", method = RequestMethod.POST)
+	@ResponseBody
+	public void auth_update(Department department, String dept_num) throws Exception {
+
+	}
 }

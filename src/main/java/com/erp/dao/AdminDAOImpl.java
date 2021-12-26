@@ -83,6 +83,11 @@ public class AdminDAOImpl implements AdminDAO {
 	public List<Department> searchAuthTable(Department department) throws Exception {
 		return sqlSession.selectList(SESSION + ".searchAuthTable", department);
 	}
+
+	@Override
+	public void auth_update(String dept_num) throws Exception {
+		sqlSession.update(SESSION + ".auth_update", dept_num);
+	}
 	
 
 
