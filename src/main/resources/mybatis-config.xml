@@ -8,5 +8,9 @@
 		<typeAlias alias = "USERS" type = "com.erp.vo.Users" />
 		<typeAlias alias = "DEPARTMENT" type = "com.erp.vo.Department" />
 		<typeAlias alias = "PRODUCT" type = "com.erp.vo.Product" />
+		<typeAlias alias = "SUPPLIER" type = "com.erp.vo.Supplier" />
+		<typeAlias alias = "CLIENTS" type = "com.erp.vo.Clients" />
+		<typeAlias alias = "ORDERS" type = "com.erp.vo.Orders" />
+		<typeAlias alias = "SALES" type = "com.erp.vo.Sales" />
 	</typeAliases>
 </configuration>
