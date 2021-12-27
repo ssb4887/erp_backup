@@ -82,7 +82,7 @@ $(document).ready(function(){
 						<div class="row">
 							<div class="form-group col-sm-9 col-md-9 col-lg-9">
 								<input type="text" name="user_num" id="user_num"
-									class="form-control" placeholder="사원번호">
+									class="form-control" placeholder="사원번호" readonly>
 							</div>
 							<div class="form-group col-sm-3 col-md-3 col-lg-3">
 								<button type="button" class="btn btn-info btn-block"
@@ -96,7 +96,7 @@ $(document).ready(function(){
 						<div class="row">
 							<div class="form-group col-sm-12 col-md-12 col-lg-12">
 								<input type="text" class="form-control" id="dept_num"
-									name="dept_num" placeholder="부서코드">
+									name="dept_num" placeholder="부서코드" readonly>
 							</div>
 						</div>
 
@@ -104,7 +104,7 @@ $(document).ready(function(){
 						<div class="row">
 							<div class="form-group col-sm-12 col-md-12 col-lg-12">
 								<input type="text" class="form-control" id="dept_name"
-									name="dept_name" placeholder="부서명">
+									name="dept_name" placeholder="부서명" readonly>
 							</div>
 						</div>
 

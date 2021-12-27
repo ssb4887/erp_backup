@@ -8,8 +8,8 @@
 <title>ERP Project</title>
 <script>
 $(document).ready(function () {
-  $("#nav .nav_list > li ").click(function () {
-    $("#nav .nav_list > li").removeClass();
+  $("#nav .nav_list > li > a ").click(function () {
+    $("#nav .nav_list > li > a").removeClass();
     $(this).addClass("on");
   });
 });

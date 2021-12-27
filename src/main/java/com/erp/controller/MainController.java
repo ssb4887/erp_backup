@@ -116,7 +116,6 @@ public class MainController {
 			url = "redirect:/admin/department";
 		}
 		
-		// user 의 dept_num에 부서코드가 있으면 로그인 후 유저 페이지르 이동
 		else {
 			session.setAttribute("user", users);
 			url = "redirect:/clients";
