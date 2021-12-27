@@ -26,14 +26,13 @@
 		<!-- 유저 네비게이션 -->
 		<jsp:include page="userNav.jsp" />
 
-
 		<!-- contents 부분 -->
 		<div id="contents"
 			style="float: left; margin-left: 12%; margin-top: 2%">
 			<!-- 내용적는 부분 -->
 			<div class="container">
 				<div class="col-lg-6">
-					<div class="jumbotron" style="background-color: #f7fbfc">
+					<div class="jumbotron" style="background-color: #f7fbfc; border: 2px solid #b9d7ea;">
 						<form method="POST" action="./user_mypage">
 							<h3
 								style="text-align: center; font-size: 30px; font-weight: 600; padding-bottom: 5%;">

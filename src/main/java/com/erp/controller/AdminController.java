@@ -16,7 +16,7 @@ import com.erp.service.AdminService;
 import com.erp.vo.Department;
 import com.erp.vo.Users;
 
-// 관리자 컨트롤러
+// (admin) 관리자 컨트롤러
 @Controller
 @RequestMapping(value="/admin/*")
 public class AdminController {
