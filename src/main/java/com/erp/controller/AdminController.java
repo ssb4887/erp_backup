@@ -42,6 +42,7 @@ public class AdminController {
 		return "admin/add_employee";
 	}
 
+	
 	// department(부서 관리)
 	@RequestMapping(value ="/department", method = RequestMethod.GET)
 	public String department(Model model) throws Exception {
@@ -51,6 +52,7 @@ public class AdminController {
 		
 		return "admin/department";
 	}
+	
 	
 	// correct_auth(부서 	권한부여)
 	@RequestMapping(value ="/correct_auth", method = RequestMethod.GET)
@@ -111,7 +113,9 @@ public class AdminController {
 		
 		service.joinAction(users);
 		
-		return "redirect:/admin/add_employee";
+		
+		
+		return "redirect:/admin/employee";
 	}
 
 	
@@ -176,20 +180,20 @@ public class AdminController {
 	@RequestMapping(value = "/auth_update", method = RequestMethod.POST)
 	@ResponseBody
 	public String auth_update(Department department) {
-
+		
+		// 0 : 성공
 		String result = "0";
 		
 		try {
 			
 			service.auth_updateAction(department);
 			
-			
 		} catch(Exception e) {
 			e.printStackTrace();
+			// 1 : 실패
 			result = "1";
 			
 		}
-		
 		
 		return result;
 	}
