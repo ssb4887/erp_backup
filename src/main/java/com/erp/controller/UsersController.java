@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.erp.service.ProductService;
+import com.erp.service.SupplierService;
 import com.erp.vo.Product;
+import com.erp.vo.Supplier;
 
 // user (유저 컨트롤러)	
 @Controller
@@ -19,7 +21,10 @@ import com.erp.vo.Product;
 public class UsersController {
 	
 	@Inject
-	ProductService proservice;
+	ProductService pro_service;
+	
+	@Inject
+	SupplierService supp_service;
 	
 	// userMain(유저 메인)	
 	@RequestMapping(value ="/userMain", method = RequestMethod.GET)
@@ -41,7 +46,7 @@ public class UsersController {
 	public String product(Model model) throws Exception{
 		
 		
-		List<Product> product_List = proservice.getProductList();
+		List<Product> product_List = pro_service.getProductList();
 		model.addAttribute("product_List",product_List);
 		
 		return "user/product";
@@ -52,7 +57,7 @@ public class UsersController {
 	@ResponseBody
 	public List<Product> searchProduct(String pro_name) throws Exception{
 		
-		List<Product> pro_list = proservice.searchProduct(pro_name);
+		List<Product> pro_list = pro_service.searchProduct(pro_name);
 		
 		return pro_list;
 	}
@@ -81,7 +86,19 @@ public class UsersController {
 	// --- supplier
 	// supplier (공급처)	
 	@RequestMapping(value ="/supplier", method = RequestMethod.GET)
-	public String supplier(Model model) {
+	public String supplier(Model model) throws Exception {
+		
+		List<Supplier> supp_list = supp_service.getSupplierList();
+		model.addAttribute("supp_list", supp_list);
+		
+		return "user/supplier";
+	}
+	
+	@RequestMapping(value = "/addSupplierAction", method = RequestMethod.POST)
+	public String addSupplierAction(Supplier supplier) throws Exception {
+		
+		supp_service.addSupplierAction(supplier);
+		
 		return "user/supplier";
 	}
 	

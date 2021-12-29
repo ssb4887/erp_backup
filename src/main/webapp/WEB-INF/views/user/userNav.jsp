@@ -5,23 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-    <!-- 기본 CSS -->
-    <link rel="stylesheet" href="${path}/resources/css/reset.css" />
-    <!-- 네비 CSS -->
-    <!-- 부트스트랩 CSS -->
-    <link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
-    <!-- 제이쿼리  -->
-    <script src="${path}/resources/js/jquery.js"></script>
-	<script>
-      $(document).ready(function () {
-        $("#nav .nav_list > li ").click(function () {
-          $("#nav .nav_list > li").removeClass();
-          $(this).addClass("on");
-        });
-      });
-      </script>
+
+<script>
+	// 네비게이션 제이쿼리
+     $(document).ready(function () {
+       $("#nav .nav_list > li ").click(function () {
+         $("#nav .nav_list > li").removeClass();
+         $(this).addClass("on");
+       });
+     });
+</script>
 </head>
 
   <body>

@@ -7,5 +7,7 @@ import com.erp.vo.Supplier;
 // user 공급처
 public interface SupplierService {
 	
-	public List<Supplier> getSupplier() throws Exception;
+	public List<Supplier> getSupplierList() throws Exception;
+	
+	public void addSupplierAction(Supplier supplier) throws Exception;
 }
