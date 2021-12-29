@@ -1,66 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>ERP Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-    <!-- 기본 CSS -->
-    <link rel="stylesheet" href="${path}/resources/css/reset.css" />
-    <!-- 네비 CSS -->
-    <link rel="stylesheet" href="${path}/resources/css/erpNav.css" />
-    <!-- 부트스트랩 CSS -->
-    <link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
-    <!-- 제이쿼리  -->
-    <script src="${path}/resources/js/jquery.js"></script>
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+	<!-- 제이쿼리  -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- 기본 CSS -->
+	<link rel="stylesheet" href="${path}/resources/css/reset.css" />
+	<!-- 네비 CSS -->
+	<link rel="stylesheet" href="${path}/resources/css/erpNav.css" />
+	<!-- 부트스트랩 CSS -->
+	<link rel="stylesheet"
+		href="${path}/resources/css/bootstrap/bootstrap.css" />
+	<link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
+	<!-- 부트스트랩 JS -->
+	<script src="${path}/resources/js/bootstrap.js"></script>
+	<!-- AJAX -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery.min.js" charset="UTF-8"></script>
 </head>
 <body>
 <div id="wrap">
     
     <!-- 유저 네비게이션 -->
     <jsp:include page = "userNav.jsp" />
-    <%--
-      <!-- nav 시작 -->
 
-      <!-- nav bar -->
-      <div id="nav">
-        <!-- nav 상단부분 -->
-        <div class="nav_top">
-          <div class="profile"></div>
-          <span>user</span>
-        </div>
-
-        <!-- nav 하단부분 -->
-        <div class="nav_bottom">
-          <ul class="nav_list">
-            <li><a href="main">ERP_Project</a></li>
-            <li><a href="myPage">마이페이지</a></li>
-            <li><a href="product">제품관리</a></li>
-            <li><a href="salesList">영업관리</a></li>
-            <li><a href="supplier">공급처관리</a></li>
-            <li>
-              <a href="clients">고객관리</a>
-            </li>
-            <li style="background-color: #b9d7ea">
-              <a href="orders">발주관리</a>
-            </li>
-            <li><a href="">회계</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 상단 bar -->
-      <div id="topBar">
-        <!-- 상단 제목 -->
-        <h2>발주 관리</h2>
-      </div>
-
-    <!-- nav 끝 -->
- --%>
     <!-- contents 부분 -->
     <div id="contents" style="float: right; width: 88%; height: 100%">
       <div>
@@ -89,14 +56,18 @@
                 </button>
               </div>
 
-              <!-- 고객등록 -->
+              <!-- 공급처 등록 -->
               <div class="form-group col-sm-2 col-md-2 col-lg-2">
-                <button
-                  type="button"
-                  class="btn btn-info btn-block"
-                  style="background-color: #769fcd; border: 1px solid #769fcd"
-                >
-                  등록
+				<button type="button" class="btn btn-info btn-block"
+				    style="background-color: #769fcd; border: 1px solid #769fcd"
+				    data-toggle="modal" data-target="#addOrdersModal">등록</button>
+              </div>
+              
+
+              <!-- 고객수정 -->
+              <div class="form-group col-sm-2 col-md-2 col-lg-2">
+                <button type="button" class="btn btn-warning btn-block">
+                  수정
                 </button>
               </div>
 
@@ -106,6 +77,8 @@
                   삭제
                 </button>
               </div>
+              
+              
             </div>
           </form>
         </div>
@@ -613,5 +586,83 @@
     </div>
     <!-- 테이블 끝 -->
   </div>
+  
+  	  <!-- 발주 등록 모달 -->
+	  <div id="addOrdersModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<!-- 모달 헤더 -->
+				<div class="modal-header">
+					<!-- &times; : 부트스트랩 x 아이콘 만들기 -->
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">공급처 등록</h4>
+				</div>
+				
+				<!-- 모달 바디 -->
+				<div class="modal-body">
+					
+					<!-- 공급처 아이디 -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<input type="text" class="form-control" id="">
+							</div>
+					</div>
+					
+					<!-- 공급처 주소 -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<input type="text" class="form-control" id="">
+							</div>
+					</div>
+					
+					<!-- 공급처 전화번호 -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<input type="text" class="form-control" id="">
+							</div>
+					</div>
+					
+					<!-- 담당 	사원 번호 -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<input type="text" class="form-control" id="">
+							</div>
+					</div>
+					
+					<!-- 담당 사원 전화번호 -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+							</div>
+					</div>
+					
+					<!-- 공급처 업종 -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<input type="text" class="form-control" id="">
+							</div>
+					</div>
+					
+					<!-- 비고란(특이사항 메모) -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<input type="text" class="form-control" id="">						
+							</div>
+					</div>
+					
+					<!-- 등록 버튼 -->
+					<!-- 비고란(특이사항 메모) -->
+					<div class="row">
+							<div class="form-group col-sm-12 col-md-12 col-lg-12">
+								<button type="button" class="btn btn-info form-control" id = "addBtn" style="background-color: #769fcd; border: 1px solid #769fcd">등록</button>
+							</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+  
+  <!-- 공급처 등록 모달 종료 -->
 </body>
 </html>

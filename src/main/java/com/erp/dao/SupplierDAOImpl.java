@@ -19,9 +19,13 @@ public class SupplierDAOImpl implements SupplierDAO {
 	final String SESSION = "com.erp.mappers.erp";
 
 	@Override
-	public List<Supplier> getSupplier() throws Exception {
-		
-		return sqlSession.selectList(SESSION + ".getSupplier");
+	public List<Supplier> getSupplierList() throws Exception {
+		return sqlSession.selectList(SESSION + ".getSupplierList");
+	}
+
+	@Override
+	public void addSupplier(Supplier supplier) throws Exception {
+		sqlSession.insert(SESSION + ".addSupplier", supplier);
 	}
 
 }

@@ -12,14 +12,14 @@ public class Supplier {
 	public Supplier() {}
 
 	public Supplier(String supp_id, String supp_add, String supp_tel, String user_num, String user_tel,
-			String supp_type, String sup_note) {
+			String supp_type, String supp_note) {
 		this.supp_id = supp_id;
 		this.supp_add = supp_add;
 		this.supp_tel = supp_tel;
 		this.user_num = user_num;
 		this.user_tel = user_tel;
 		this.supp_type = supp_type;
-		this.supp_note = sup_note;
+		this.supp_note = supp_note;
 	}
 
 	public String getSupp_id() {
@@ -70,11 +70,11 @@ public class Supplier {
 		this.supp_type = supp_type;
 	}
 
-	public String getSup_note() {
+	public String getSupp_note() {
 		return supp_note;
 	}
 
-	public void setSup_note(String sup_note) {
+	public void setSupp_note(String sup_note) {
 		this.supp_note = sup_note;
 	}
 	

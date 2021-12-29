@@ -117,16 +117,30 @@
 		<!-- 공급처(Supplier) -->
 		
 		<!-- 공급처 리스트 불러오기 기능 -->
-		<select id = "getSupplier" resultType = "Supplier">
+		<select id = "getSupplierList" resultType = "Supplier">
 			SELECT *
 			FROM SUPPLIER
 		</select>
 		
-		<!-- 공급처 검색 기능(공급처 명 기준) -->
+		<!-- 공급처 검색 기능(공급처 명 기준) 
 		<select id="searchSupplier" resultType = "Supplier">
 			SELECT *
 			FROM SUPPLIER
 			WHERE supp_id LIKE #{supp_id}
 		</select>
+		-->
+		
+		<!-- 공급처 등록 기능 -->
+		<insert id = "addSupplier">
+			 INSERT INTO SUPPLIER VALUE(
+			 	#{supp_id},
+				#{supp_add},
+				#{supp_tel},
+				#{user_num},
+				#{user_tel},
+				#{supp_type},
+				#{supp_note }
+			 );
+		</insert>
 		
 </mapper>

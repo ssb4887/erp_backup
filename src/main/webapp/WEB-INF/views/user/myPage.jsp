@@ -14,9 +14,10 @@
 <!-- 네비 CSS -->
 <link rel="stylesheet" href="${path}/resources/css/erpNav.css" />
 <!-- 부트스트랩 CSS -->
-<link rel="stylesheet"
-	href="${path}/resources/css/bootstrap/bootstrap.css" />
+<link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
 <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
+<!-- 부트스트랩 JS -->
+<script src="${path}/resources/js/bootstrap.js"></script>
 <!-- 제이쿼리  -->
 <script src="${path}/resources/js/jquery.js"></script>
 

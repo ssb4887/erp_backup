@@ -212,8 +212,8 @@ $(document).ready(function(){
 </div>
 <!-- 부서 번호 검색 모달  종료 -->
 
-<!-- 우편 번호 검색 모달 -->
 
+<!-- 우편 번호 검색 모달 -->
 <div id="addrModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 		<div class=modal-content>
@@ -281,7 +281,6 @@ $(document).ready(function(){
 	</div>
 </div>
 <%-- 주소 검색 모달 종료--%>
-<!-- 우편 번호 검색 모달 종료-->
 
 </body>
 </html>

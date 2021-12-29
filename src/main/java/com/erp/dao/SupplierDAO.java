@@ -7,5 +7,7 @@ import com.erp.vo.Supplier;
 // user 공급처
 public interface SupplierDAO {
 	
-	public List<Supplier> getSupplier() throws Exception;
+	public List<Supplier> getSupplierList() throws Exception;
+	
+	public void addSupplier(Supplier supplier) throws Exception;
 }
