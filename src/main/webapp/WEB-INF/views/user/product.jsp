@@ -14,15 +14,20 @@
     <!-- 부트스트랩 CSS -->
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
-    <!-- 부트스트랩 JS -->
-	<script src="${path}/resources/js/bootstrap.js"></script>
     <!-- 제이쿼리 -->
     <script src="${path}/resources/js/jquery.js"></script>
-
+	<style>
+	.table-responsive{
+		-ms-overflow-style: none; scrollbar-width: none;
+	}
+	.table-responsive::-webkit-scrollbar {
+		display: none;
+	}
+	</style>
 <script>
 $(document).ready(function(){
-	// 제품 리스트 검색 
-	$('#proSearchBtn').click(function(){
+	
+	$('#searchProductBtn').click(function(){
 		var pro_name = $('#pro_name').val();
 		$.ajax({
 			
@@ -63,9 +68,42 @@ $(document).ready(function(){
     <div id="wrap">
     <!-- 유저 네비게이션 -->
     <jsp:include page = "userNav.jsp" />
+    <%--
+      <!-- nav bar -->
+      <div id="nav">
+        <!-- nav 상단부분 -->
+        <div class="nav_top">
+          <div class="profile"></div>
+          <span>user</span>
+        </div>
 
+        <!-- nav 하단부분 -->
+        <div class="nav_bottom">
+          <ul class="nav_list">
+            <li><a href="main ">ERP_Project</a></li>
+            <li><a href="myPage ">마이페이지</a></li>
+            <li style="background-color: #b9d7ea">
+              <a href="product ">제품관리</a>
+            </li>
+            <li><a href="salesList ">영업관리</a></li>
+            <li><a href="supplier ">공급처관리</a></li>
+            <li><a href="clients ">고객관리</a></li>
+            <li><a href="orders ">발주관리</a></li>
+            <li><a href="">회계</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 상단 bar -->
+      <div id="topBar">
+        <!-- 상단 제목 -->
+        <h2>제품관리</h2>
+      </div>
+  
+    <!-- nav 끝 -->
+ --%>
     <!-- contents 부분 -->
-    <div id="contents" style="float: right; width: 88%; height: 100%">
+    <div id="contents" style="float: right; width: 88vw; height: 88vh">
       <div>
         <!-- 검색 폼 -->
         <div style="width: 600px; display: block">
@@ -87,7 +125,7 @@ $(document).ready(function(){
                 <button
                   type="button"
                   class="btn btn-info btn-block"
-                  id="proSearchBtn"
+                  id="searchProductBtn"
                   style="background-color: #b9d7ea; border: 1px solid #b9d7ea"
                 >
                   검색
@@ -100,28 +138,24 @@ $(document).ready(function(){
                   type="button"
                   class="btn btn-info btn-block"
                   style="background-color: #769fcd; border: 1px solid #769fcd"
-                  id = "proAddBtn"
                 >
                   등록
                 </button>
               </div>
 
-              <!-- 제품수정 -->
-              <div class="form-group col-sm-2 col-md-2 col-lg-2">
-              	<button type="button" class="btn btn-warning btn-block" id = "proUpdateBtn">
-              		수정
-              	</button>
-			 </div>
-	
               <!-- 제품삭제 -->
               <div class="form-group col-sm-2 col-md-2 col-lg-2">
-                <button type="button" class="btn btn-danger btn-block" id = "proDeleteBtn">
+                <button type="button" class="btn btn-danger btn-block">
                   삭제
                 </button>
               </div>
               
-
-              
+              <!-- 제품수정 -->
+              <div class="form-group col-sm-2 col-md-2 col-lg-2">
+              	<button type="button" class="btn btn-warning btn-block">
+              		수정
+              	</button>
+              </div>
             </div>
           </form>
         </div>
@@ -130,11 +164,11 @@ $(document).ready(function(){
         <div
           class="table-responsive"
           style="
-            width: 1650px;
+            width: 85vw;
             height: auto;
             display: block;
             background-color: #f7fbfc;
-            margin: 2% 0 0 1%;
+            margin: 2% 0 0 1.5vw;
             border-top: 3px ridge #f9f9f9;
             border-bottom: 3px ridge #f9f9f9;
             box-sizing: border-box;
@@ -142,21 +176,21 @@ $(document).ready(function(){
         >
           <table
             style="
-              width: 1630px;
+              width: 85vw;
               height: auto;
-              margin: 0 -2% 0 0;
+              margin: 0 0 0 0;
               text-align: center;
             "
             class="table borderless"
           >
             <tr style="font-weight: 700">
-              <td style="width: 5%; text-align: center">선택</td>
-              <td style="width: 20%; text-align: center">제품번호</td>
-              <td style="width: 20%; text-align: center">제품명</td>
-              <td style="width: 15%; text-align: center">색상</td>
-              <td style="width: 15%; text-align: center">재고수량</td>
-              <td style="width: 20%; text-align: center">비고</td>
-              <td style="width: 5%; text-align: center">수정</td>
+              <td style="width: 4.5vw; text-align: center">선택</td>
+              <td style="width: 16.5vw; text-align: center">제품번호</td>
+              <td style="width: 16.5vw; text-align: center">제품명</td>
+              <td style="width: 13.5vw; text-align: center">색상</td>
+              <td style="width: 13.5vw; text-align: center">재고수량</td>
+              <td style="width: 16vw; text-align: center">비고</td>
+              <td style="width: 4.5vw; text-align: center">수정</td>
             </tr>
           </table>
         </div>
@@ -165,28 +199,29 @@ $(document).ready(function(){
         <div
           class="table-responsive"
           style="
-            width: 1650px;
-            height: 700px;
-            margin-left: 1%;
+            border-bottom: 3px ridge #f9f9f9;
+            width: 85vw;
+            height: 70vh;
+            margin-left: 1.5vw;
             overflow: scroll-y;
           "
         >
         <div id="productListTable">
           <table
-            style="width: 100%; height: auto; text-align: center"
+            style="width: 85vw; height: auto; text-align: center"
             class="table table-hover"
           >
           <c:forEach var="product" items="${product_List }">
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 20%; text-align: center; line-height: 30px"> ${product.pro_num }</td>
-              <td style="width: 20%; text-align: center; line-height: 30px">${product.pro_name }</td>
-              <td style="width: 15%; text-align: center; line-height: 30px">${product.pro_color }</td>
-              <td style="width: 15%; text-align: center; line-height: 30px">${product.pro_count }</td>
-              <td style="width: 20%; text-align: center; line-height: 30px">${product.pro_note }</td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 16.5vw; text-align: center; line-height: 30px"> ${product.pro_num }</td>
+              <td style="width: 16.5vw; text-align: center; line-height: 30px">${product.pro_name }</td>
+              <td style="width: 13.5vw; text-align: center; line-height: 30px">${product.pro_color }</td>
+              <td style="width: 13.5vw; text-align: center; line-height: 30px">${product.pro_count }</td>
+              <td style="width: 16vw; text-align: center; line-height: 30px">${product.pro_note }</td>
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>

@@ -14,8 +14,6 @@
     <!-- 부트스트랩 CSS -->
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
     <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
-    <!-- 부트스트랩 JS -->
-	<script src="${path}/resources/js/bootstrap.js"></script>
     <!-- 제이쿼리  -->
     <script src="${path}/resources/js/jquery.js"></script>
 <script>
@@ -26,6 +24,14 @@
         });
       });
     </script>
+    <style>
+	.table-responsive{
+		-ms-overflow-style: none; scrollbar-width: none;
+	}
+	.table-responsive::-webkit-scrollbar {
+		display: none;
+	}
+	</style>
 </head>
   <body>
     <div id="wrap">
@@ -70,7 +76,7 @@
 --%>
 
     <!-- contents 부분 -->
-    <div id="contents" style="float: right; width: 88%; height: 100%">
+    <div id="contents" style="float: right; width: 88vw; height: 88vh">
       <div>
         <!-- 검색 폼 -->
         <div style="width: 500px; display: block">
@@ -122,11 +128,11 @@
         <div
           class="table-responsive"
           style="
-            width: 1650px;
+            width: 85vw;
             height: auto;
             display: block;
             background-color: #f7fbfc;
-            margin: 2% 0 0 1%;
+            margin: 2% 0 0 1.5vw;
             border-top: 3px ridge #f9f9f9;
             border-bottom: 3px ridge #f9f9f9;
             box-sizing: border-box;
@@ -134,25 +140,25 @@
         >
           <table
             style="
-              width: 1630px;
+              width: 85vw;
               height: auto;
-              margin: 0 -2% 0 0;
+              margin: 0 0 0 0;
               text-align: center;
             "
             class="table"
           >
             <tr style="font-weight: 700">
-              <td style="width: 5%; text-align: center">선택</td>
-              <td style="width: 10%; text-align: center">영업번호</td>
-              <td style="width: 10%; text-align: center">담당자</td>
-              <td style="width: 10%; text-align: center">사원번호</td>
-              <td style="width: 10%; text-align: center">업체번호</td>
-              <td style="width: 10%; text-align: center">제품번호</td>
-              <td style="width: 10%; text-align: center">수량</td>
-              <td style="width: 10%; text-align: center">영업금액</td>
-              <td style="width: 10%; text-align: center">영업날짜</td>
-              <td style="width: 10%; text-align: center">비고</td>
-              <td style="width: 5%; text-align: center">수정</td>
+              <td style="width: 4vw; text-align: center">선택</td>
+              <td style="width: 8.5vw; text-align: center">영업번호</td>
+              <td style="width: 8.5vw; text-align: center">담당자</td>
+              <td style="width: 8.5vw; text-align: center">사원번호</td>
+              <td style="width: 8.5vw; text-align: center">업체번호</td>
+              <td style="width: 8.5vw; text-align: center">제품번호</td>
+              <td style="width: 8.5vw; text-align: center">수량</td>
+              <td style="width: 8.5vw; text-align: center">영업금액</td>
+              <td style="width: 8.5vw; text-align: center">영업날짜</td>
+              <td style="width: 8.5vw; text-align: center">비고</td>
+              <td style="width: 4.5vw; text-align: center">수정</td>
             </tr>
           </table>
         </div>
@@ -161,1011 +167,864 @@
         <div
           class="table-responsive"
           style="
-            width: 1650px;
-            height: 700px;
-            margin-left: 1%;
+            border-bottom: 3px ridge #f9f9f9;
+            width: 85vw;
+            height: 70vh;
+            margin-left: 1.5vw;
             overflow: scroll-y;
           "
         >
           <table
             border="1"
-            style="width: 100%; height: auto; text-align: center"
+            style="width: 85vw; height: auto; text-align: center"
             class="table"
           >
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
               </td>
             </tr>
             <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4vw; text-align: center; line-height: 30px">
                 <label><input type="checkbox" value="" /></label>
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20211214001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 징크스
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 SAL001
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 DAL090
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 PRO051
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 50EA
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 20,000,000
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 2021-12-14
               </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
+              <td style="width: 8.5vw; text-align: center; line-height: 30px">
                 --
               </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <button type="button" class="btn btn-info btn-block">
-                  수정
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <label><input type="checkbox" value="" /></label>
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20211214001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                징크스
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                SAL001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                DAL090
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                PRO051
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                50EA
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20,000,000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-14
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                --
-              </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <button type="button" class="btn btn-info btn-block">
-                  수정
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <label><input type="checkbox" value="" /></label>
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20211214001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                징크스
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                SAL001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                DAL090
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                PRO051
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                50EA
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20,000,000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-14
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                --
-              </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <button type="button" class="btn btn-info btn-block">
-                  수정
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <label><input type="checkbox" value="" /></label>
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20211214001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                징크스
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                SAL001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                DAL090
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                PRO051
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                50EA
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20,000,000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-14
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                --
-              </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <button type="button" class="btn btn-info btn-block">
-                  수정
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td style="width: 5%; text-align: center; line-height: 30px">
-                <label><input type="checkbox" value="" /></label>
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20211214001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                징크스
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                SAL001
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                DAL090
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                PRO051
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                50EA
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                20,000,000
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                2021-12-14
-              </td>
-              <td style="width: 10%; text-align: center; line-height: 30px">
-                --
-              </td>
-              <td style="width: 5%; text-align: center; line-height: 30px">
+              <td style="width: 4.5vw; text-align: center; line-height: 30px">
                 <button type="button" class="btn btn-info btn-block">
                   수정
                 </button>
