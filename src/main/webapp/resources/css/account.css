@@ -1,27 +1,28 @@
 @charset "UTF-8";
 
-
-.container h3 {
+/*
+#contents h3 {
+  margin: 7px 0 0 0;
   font-size: 22px;
   font-weight: 600;
-  height: 38px;
+  height: 33px;
   padding-left: 20px;
-  line-height: 22px;
   font-family: "KoPubWorld돋움체";
   border-bottom: 3px solid #769fcd;
-}
+}*/
 
 #add_Acc {
-  padding-top: 5px;
+  padding-top: 10px;
   width: 100%;
-  height: 32px;
-  border-bottom: 2px solid #769fcd;
+  height: 40px;
+  /*border-bottom: 2px solid #769fcd;*/
 }
 #add_con {
   float: left;
   margin-left: 20px;
   font-size: 16px;
   color: #444;
+  
 }
 
 #add_con li {
@@ -29,38 +30,48 @@
   margin-left: 10px;
   height: 23px;
 }
+
+.search_btn > a{
+	background-color: #D6E6F2;
+	display: block;
+	text-decoration:none;
+}
+a:hover, a:active {text-decoration: none; color:#fff; background-color:#B9D7EA;}
+.search_btn > a:hover{
+	text-decoration: none;
+}
 #add_con input {
   width: 100px;
-  height: 20px;
+  height: 23px;
 }
 .acc_search {
-  width: 130px;
+  
   height: 23px;
   line-height: 25px;
-  background-color: rgb(228, 228, 228);
 }
 .acc_search input {
-  width: 80px;
+  width: 100px;
   height: 20px;
   outline: none;
-  border: none;
+  border: 1px solid #769fcd;
 }
 .acc_search input:focus {
   outline: none;
   border: none;
 }
-#add_con .acc_search > i {
-  font-size: 18px;
-  line-height: 22px;
-  cursor: pointer;
-}
+
 .acc_search:focus-within {
   outline: 1.5px solid #769fcd;
   border-radius: 3px;
 }
-.acc_search {
-  border: 1px solid #769fcd;
-  line-height: 100%;
+.search_btn{
+	display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #f7fbfc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
 }
 
 #add_conday {
@@ -79,15 +90,26 @@
 }
 .acc_searchday input {
   width: 150px;
+  height: 24px;
   margin-left: 10px;
+  outline: none;
+  border: 1px solid #769fcd;
 }
 /* 조회 테이블 */
+.read_all{
+	-ms-overflow-style: none; scrollbar-width: none;
+}
+.read_all::-webkit-scrollbar {
+	display: none;
+}
+
 .table_title div {
   float: left;
   box-sizing: border-box;
   border-right: 0.5px solid #777;
   height: 25px;
   border-bottom: 2px solid #769fcd;
+  background-color: #F7FBFC;
 }
 .table_title div:last-child {
   border-right: none;
@@ -105,7 +127,7 @@
 .table_con input {
   cursor: pointer;
   zoom: 1.4;
-  margin-top: 2px;
+  margin-top: -2px;
 }
 .selected {
   background-color: #f2e6d6;

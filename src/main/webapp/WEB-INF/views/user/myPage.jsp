@@ -14,10 +14,9 @@
 <!-- 네비 CSS -->
 <link rel="stylesheet" href="${path}/resources/css/erpNav.css" />
 <!-- 부트스트랩 CSS -->
-<link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css" />
+<link rel="stylesheet"
+	href="${path}/resources/css/bootstrap/bootstrap.css" />
 <link rel="stylesheet" href="${path}/resources/css/bootstrap/custom.css" />
-<!-- 부트스트랩 JS -->
-<script src="${path}/resources/js/bootstrap.js"></script>
 <!-- 제이쿼리  -->
 <script src="${path}/resources/js/jquery.js"></script>
 
@@ -27,13 +26,14 @@
 		<!-- 유저 네비게이션 -->
 		<jsp:include page="userNav.jsp" />
 
+
 		<!-- contents 부분 -->
 		<div id="contents"
 			style="float: left; margin-left: 12%; margin-top: 2%">
 			<!-- 내용적는 부분 -->
 			<div class="container">
 				<div class="col-lg-6">
-					<div class="jumbotron" style="background-color: #f7fbfc; border: 2px solid #b9d7ea;">
+					<div class="jumbotron" style="background-color: #f7fbfc">
 						<form method="POST" action="./user_mypage">
 							<h3
 								style="text-align: center; font-size: 30px; font-weight: 600; padding-bottom: 5%;">

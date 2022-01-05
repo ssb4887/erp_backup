@@ -29,13 +29,13 @@ public class UsersController {
 	// userMain(유저 메인)	
 	@RequestMapping(value ="/userMain", method = RequestMethod.GET)
 	public String main(Model model) {
-		return "admin/userMain";
+		return "user/userMain";
 	}
-	
+
 	// --- myPage
 	// myPage(마이페이지)
 	@RequestMapping(value="/myPage", method = RequestMethod.GET)
-	public String userMain(Model model) {
+	public String myPage(Model model) {
 		return "user/myPage";
 
 	}
@@ -101,6 +101,8 @@ public class UsersController {
 		
 		return "user/supplier";
 	}
+	
+	
 	
 	// --- accounting
 	// accounting (회계)	
