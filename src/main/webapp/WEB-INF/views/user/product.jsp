@@ -144,16 +144,17 @@
 				</div>
 
 <!-- 공급처 등록 모달  -->
+						
 							<div id="addProModal" class="modal fade" role="dialog">
 								<div class="modal-dialog">
 									<div class="modal-content">
-
+										<form method="POST" action="./addProductAction">
 										<div class="modal-header">
 											<!-- &times; : 부트스트랩 x 아이콘 만들기 -->
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
 											<h4 class="modal-title">제품 등록</h4>
 										</div>
-
+									
 										<div class="modal-body">
 
 											<!-- 공급처 ID -->
@@ -214,6 +215,7 @@
 												</div>
 											</div>
 										</div>
+										</form>
 									</div>
 								</div>
 							</div>
