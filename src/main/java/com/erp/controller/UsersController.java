@@ -68,7 +68,7 @@ public class UsersController {
 		
 		pro_service.addProductAction(product);
 		
-		return "redirect:/product";
+		return "redirect:/";
 	}
 	// --- clients
 	// clients(고객관리)
